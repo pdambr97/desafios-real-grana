@@ -2,47 +2,58 @@ import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from '@/components/ui/table'
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from '@/components/ui/accordion'
 import useRegistrationStore from '@/stores/useRegistrationStore'
-import { LineChart, Wallet, BarChart3, TrendingUp, GraduationCap, Users } from 'lucide-react'
+import {
+  LineChart,
+  Wallet,
+  BarChart3,
+  TrendingUp,
+  Calendar,
+  CheckCircle2,
+  Download,
+} from 'lucide-react'
 
 export default function InvestorLeague() {
   const { openModal } = useRegistrationStore()
 
-  const features = [
-    {
-      icon: <Wallet className="w-8 h-8 text-investor" />,
-      title: 'R$ 100.000 Virtuais',
-      desc: 'Cada equipe recebe capital fictício para montar sua carteira do zero.',
-    },
-    {
-      icon: <LineChart className="w-8 h-8 text-investor" />,
-      title: 'Market Data Real',
-      desc: 'Cotações integradas com ativos reais da B3 (Ações, FIIs e ETFs).',
-    },
-    {
-      icon: <BarChart3 className="w-8 h-8 text-investor" />,
-      title: 'Análise de Risco',
-      desc: 'Ferramentas para entender volatilidade e diversificação na prática.',
-    },
+  const skills = [
+    'Gestão de risco',
+    'Tomada de decisão',
+    'Leitura de mercado',
+    'Pensamento analítico',
+    'Trabalho em equipe',
+    'Educação financeira aplicada',
   ]
 
-  const mockRanking = [
-    { pos: 1, name: 'Alpha Capital (Escola X)', ret: '+14.2%', sharpe: '1.8' },
-    { pos: 2, name: 'Beta Investments (Escola Y)', ret: '+12.5%', sharpe: '1.5' },
-    { pos: 3, name: 'Gamma Fund (Escola Z)', ret: '+11.8%', sharpe: '1.4' },
-    { pos: 4, name: 'Delta Value (Escola W)', ret: '+9.4%', sharpe: '1.1' },
-    { pos: 5, name: 'Epsilon Traders (Escola V)', ret: '+8.1%', sharpe: '0.9' },
+  const schedule = [
+    { date: 'Março/2026', title: 'Abertura da Liga e Treinamento na Plataforma' },
+    { date: 'Abril/2026', title: 'Fase 1: Liga Regular (4 semanas de operações)' },
+    { date: 'Maio/2026', title: 'Análise de Resultados e Seleção dos Finalistas' },
+    { date: 'Junho/2026', title: 'Fase 2: Defesas do Investment Case e Premiação' },
+  ]
+
+  const faqs = [
+    {
+      q: 'O dinheiro é real?',
+      a: 'Não, usamos um simulador avançado com dinheiro fictício (cada equipe recebe R$ 100.000 virtuais). No entanto, todas as cotações, gráficos e ativos são reais, sincronizados com a B3.',
+    },
+    {
+      q: 'Os alunos precisam de conhecimento prévio de economia?',
+      a: 'Não! O projeto é focado no aprendizado contínuo. Fornecemos materiais de apoio robustos, trilhas de conhecimento e suporte para as decisões ao longo da liga.',
+    },
+    {
+      q: 'Como funciona o ranking?',
+      a: 'Nosso ranking vai além do retorno absoluto. Ele avalia o retorno ajustado ao risco utilizando o Índice Sharpe, garantindo que boas decisões, e não apenas sorte, sejam premiadas.',
+    },
   ]
 
   return (
-    <div className="pt-20">
+    <div className="pt-20 bg-background">
       {/* Hero */}
       <section className="bg-navy py-24 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-investor/10 blur-[120px] rounded-full pointer-events-none translate-x-1/3 -translate-y-1/3"></div>
@@ -51,21 +62,30 @@ export default function InvestorLeague() {
             <Badge className="bg-investor/20 text-investor border-investor/30 mb-6 px-4 py-1.5 text-sm uppercase tracking-wider">
               Educação Financeira Aplicada
             </Badge>
-            <h1 className="text-5xl md:text-6xl font-display font-black text-white mb-6 leading-tight">
-              Aprenda a investir como quem{' '}
-              <span className="text-gradient-investor">move o mercado.</span>
+            <h1 className="text-4xl md:text-6xl font-display font-black text-white mb-6 leading-tight">
+              Os alunos já falam sobre dinheiro. A diferença está em{' '}
+              <span className="text-gradient-investor">como aprendem.</span>
             </h1>
-            <p className="text-xl text-gray-300 mb-8">
-              O mundo mudou. Da poupança de 1995 para Pix, Cripto e IA em 2024. A Investor League
-              coloca o aluno no assento do gestor de portfólio.
+            <p className="text-xl text-gray-300 mb-10 leading-relaxed">
+              Uma liga nacional onde estudantes aprendem investimentos na prática através de um
+              simulador com ativos reais, ranking ao vivo e desafios estratégicos.
             </p>
-            <Button
-              onClick={() => openModal()}
-              size="lg"
-              className="bg-investor hover:bg-investor/90 text-navy h-14 px-8 text-lg rounded-full font-bold shadow-[0_0_20px_rgba(16,185,129,0.4)] hover:scale-105 transition-all"
-            >
-              Entrar na Liga
-            </Button>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Button
+                onClick={() => openModal('school')}
+                size="lg"
+                className="bg-investor hover:bg-investor/90 text-navy h-14 px-8 text-lg rounded-full font-bold shadow-[0_0_20px_rgba(16,185,129,0.4)] hover:scale-105 transition-all w-full sm:w-auto"
+              >
+                Agendar apresentação para minha escola
+              </Button>
+              <Button
+                variant="outline"
+                size="lg"
+                className="border-white/30 text-white hover:bg-white/10 bg-transparent h-14 px-8 text-lg rounded-full font-bold w-full sm:w-auto"
+              >
+                <Download className="mr-2 h-5 w-5" /> Baixar Regulamento
+              </Button>
+            </div>
           </div>
           <div className="relative hidden md:block">
             {/* Abstract representation of charts */}
@@ -73,7 +93,7 @@ export default function InvestorLeague() {
             <div className="bg-card rounded-2xl border border-border p-6 shadow-2xl relative">
               <div className="flex items-center justify-between mb-6">
                 <div>
-                  <p className="text-sm text-muted-foreground">Patrimônio Virtual</p>
+                  <p className="text-sm text-muted-foreground">Patrimônio Virtual da Equipe</p>
                   <p className="text-3xl font-bold font-display">R$ 114.200,00</p>
                 </div>
                 <Badge className="bg-investor/20 text-investor border-none">+14.2%</Badge>
@@ -93,121 +113,138 @@ export default function InvestorLeague() {
         </div>
       </section>
 
-      {/* Features */}
-      <section className="py-24 bg-background">
+      {/* Como funciona */}
+      <section className="py-24 bg-muted/20">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16 max-w-2xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
-              O Simualdor Definitivo
-            </h2>
-            <p className="text-muted-foreground">
-              Não é sobre comprar na baixa e vender na alta. É sobre construir teses, analisar
-              fundamentos e gerenciar riscos reais.
+          <div className="text-center mb-16 max-w-3xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">Como funciona</h2>
+            <p className="text-muted-foreground text-lg">
+              Um formato engajador e estruturado que combina tomada de decisão sob pressão com
+              defesa analítica de portfólio.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {features.map((feature, i) => (
-              <Card
-                key={i}
-                className="border-border bg-muted/20 hover:bg-muted/40 transition-colors text-center p-6 border-t-4 hover:border-t-investor duration-300"
-              >
-                <div className="mx-auto bg-background w-16 h-16 rounded-full flex items-center justify-center mb-6 shadow-sm">
-                  {feature.icon}
-                </div>
-                <h3 className="text-xl font-bold mb-3">{feature.title}</h3>
-                <p className="text-muted-foreground">{feature.desc}</p>
-              </Card>
-            ))}
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            <Card className="border-border bg-card p-8 hover:shadow-lg transition-shadow border-t-4 border-t-investor">
+              <div className="mb-6 bg-investor/10 w-16 h-16 rounded-2xl flex items-center justify-center text-investor">
+                <BarChart3 className="w-8 h-8" />
+              </div>
+              <h3 className="text-2xl font-bold mb-4">Fase 1: Liga Regular</h3>
+              <p className="text-muted-foreground mb-6 leading-relaxed">
+                Durante 4 semanas, as equipes competem em nosso simulador. Cada grupo recebe R$
+                100.000 virtuais para montar e gerir sua carteira de investimentos com base em
+                ativos reais.
+              </p>
+              <ul className="space-y-3">
+                <li className="flex items-center gap-2 font-medium">
+                  <CheckCircle2 className="w-5 h-5 text-investor" /> Operações reais da B3
+                </li>
+                <li className="flex items-center gap-2 font-medium">
+                  <CheckCircle2 className="w-5 h-5 text-investor" /> Ranking ao vivo e dinâmico
+                </li>
+                <li className="flex items-center gap-2 font-medium">
+                  <CheckCircle2 className="w-5 h-5 text-investor" /> Avaliação via Índice Sharpe
+                  (Risco x Retorno)
+                </li>
+              </ul>
+            </Card>
+
+            <Card className="border-border bg-card p-8 hover:shadow-lg transition-shadow border-t-4 border-t-investor">
+              <div className="mb-6 bg-investor/10 w-16 h-16 rounded-2xl flex items-center justify-center text-investor">
+                <LineChart className="w-8 h-8" />
+              </div>
+              <h3 className="text-2xl font-bold mb-4">Fase 2: Investment Case</h3>
+              <p className="text-muted-foreground mb-6 leading-relaxed">
+                As equipes de melhor desempenho avançam para a fase final. Aqui não basta apenas ter
+                lucrado; os alunos devem defender sua tese de investimentos para uma banca
+                qualificada.
+              </p>
+              <ul className="space-y-3">
+                <li className="flex items-center gap-2 font-medium">
+                  <CheckCircle2 className="w-5 h-5 text-investor" /> Apresentação da tese de
+                  alocação
+                </li>
+                <li className="flex items-center gap-2 font-medium">
+                  <CheckCircle2 className="w-5 h-5 text-investor" /> Defesa de cenário
+                  macroeconômico
+                </li>
+                <li className="flex items-center gap-2 font-medium">
+                  <CheckCircle2 className="w-5 h-5 text-investor" /> Sabatina com profissionais do
+                  mercado
+                </li>
+              </ul>
+            </Card>
           </div>
         </div>
       </section>
 
-      {/* Ranking & Competition */}
-      <section className="py-24 bg-muted/30">
+      {/* O que os alunos desenvolvem & Cronograma */}
+      <section className="py-24 bg-navy text-white">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="order-2 lg:order-1">
-              <Card className="border border-border shadow-xl overflow-hidden">
-                <CardHeader className="bg-background border-b border-border pb-4">
-                  <CardTitle className="flex items-center gap-2">
-                    <TrendingUp className="text-investor" /> Ranking Nacional (Top 5)
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="p-0">
-                  <Table>
-                    <TableHeader className="bg-muted/50">
-                      <TableRow>
-                        <TableHead className="w-16 text-center">Pos</TableHead>
-                        <TableHead>Equipe</TableHead>
-                        <TableHead className="text-right">Retorno</TableHead>
-                        <TableHead className="text-right hidden sm:table-cell">
-                          Índice Sharpe
-                        </TableHead>
-                      </TableRow>
-                    </TableHeader>
-                    <TableBody>
-                      {mockRanking.map((row) => (
-                        <TableRow key={row.pos} className="hover:bg-muted/50">
-                          <TableCell className="text-center font-bold">
-                            {row.pos === 1 ? (
-                              <span className="text-yellow-500">1º</span>
-                            ) : (
-                              `${row.pos}º`
-                            )}
-                          </TableCell>
-                          <TableCell className="font-medium">{row.name}</TableCell>
-                          <TableCell className="text-right text-investor font-bold">
-                            {row.ret}
-                          </TableCell>
-                          <TableCell className="text-right text-muted-foreground hidden sm:table-cell">
-                            {row.sharpe}
-                          </TableCell>
-                        </TableRow>
-                      ))}
-                    </TableBody>
-                  </Table>
-                </CardContent>
-              </Card>
+            <div>
+              <h2 className="text-3xl md:text-4xl font-display font-bold mb-8">
+                O que os alunos desenvolvem
+              </h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                {skills.map((skill, i) => (
+                  <div
+                    key={i}
+                    className="flex items-center gap-4 p-4 rounded-xl bg-white/5 border border-white/10"
+                  >
+                    <div className="w-10 h-10 rounded-full bg-investor/20 flex items-center justify-center shrink-0">
+                      <TrendingUp className="text-investor w-5 h-5" />
+                    </div>
+                    <span className="font-semibold text-sm md:text-base">{skill}</span>
+                  </div>
+                ))}
+              </div>
             </div>
 
-            <div className="order-1 lg:order-2">
-              <h2 className="text-3xl md:text-4xl font-display font-bold mb-6">
-                A Grande Final: <br />O Investment Case
-              </h2>
-              <p className="text-lg text-muted-foreground mb-8">
-                As equipes com os melhores desempenhos (ajustados ao risco) são convidadas para a
-                defesa de tese. Não basta ter lucrado; é preciso explicar a estratégia para uma
-                banca de profissionais da Faria Lima.
-              </p>
-
-              <div className="space-y-4">
-                <div className="flex items-start gap-4">
-                  <div className="bg-investor/10 p-2 rounded shrink-0">
-                    <GraduationCap className="text-investor" />
+            <div className="bg-white/5 p-8 rounded-3xl border border-white/10">
+              <Badge className="bg-investor/20 text-investor mb-6 border-none text-sm px-4">
+                Cronograma 2026
+              </Badge>
+              <div className="space-y-6 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-white/20 before:to-transparent">
+                {schedule.map((item, i) => (
+                  <div
+                    key={i}
+                    className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active"
+                  >
+                    <div className="flex items-center justify-center w-10 h-10 rounded-full border border-white/30 bg-navy text-white shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow relative z-10">
+                      <Calendar className="w-4 h-4 text-investor" />
+                    </div>
+                    <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white/5 p-4 rounded-xl border border-white/10">
+                      <div className="text-investor font-bold text-sm mb-1">{item.date}</div>
+                      <div className="text-slate-300 font-medium">{item.title}</div>
+                    </div>
                   </div>
-                  <div>
-                    <h4 className="font-bold">Aprendizado como Investidor</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Foco em análise de empresas, leitura de cenários macroeconômicos e psicologia
-                      do mercado.
-                    </p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-4">
-                  <div className="bg-investor/10 p-2 rounded shrink-0">
-                    <Users className="text-investor" />
-                  </div>
-                  <div>
-                    <h4 className="font-bold">Trabalho em Equipe</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Decisões tomadas em comitê, simulando o ambiente de uma gestora real.
-                    </p>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Perguntas Frequentes (FAQ) */}
+      <section className="py-24 bg-background">
+        <div className="container mx-auto px-4 max-w-3xl">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-display font-bold mb-4">Perguntas Frequentes</h2>
+            <p className="text-muted-foreground">Esclareça suas dúvidas sobre a Investor League.</p>
+          </div>
+          <Accordion type="single" collapsible className="w-full">
+            {faqs.map((faq, i) => (
+              <AccordionItem key={i} value={`item-${i}`} className="border-border">
+                <AccordionTrigger className="text-left font-bold text-lg hover:text-investor transition-colors">
+                  {faq.q}
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground text-base leading-relaxed">
+                  {faq.a}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
         </div>
       </section>
     </div>
