@@ -78,7 +78,7 @@ export default function XpArena() {
               size="lg"
               className="bg-xp hover:bg-xp/90 text-white h-14 px-8 text-lg rounded-none font-bold uppercase tracking-wider skew-x-[-10deg] shadow-[0_0_20px_rgba(249,115,22,0.4)] hover:scale-105 transition-all"
             >
-              <span className="skew-x-[10deg]">Inscrição</span>
+              <span className="skew-x-[10deg]">Realizar Inscrição</span>
             </Button>
             <Button
               variant="outline"

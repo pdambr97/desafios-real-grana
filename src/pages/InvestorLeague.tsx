@@ -76,7 +76,7 @@ export default function InvestorLeague() {
                 size="lg"
                 className="bg-investor hover:bg-investor/90 text-navy h-14 px-8 text-lg rounded-full font-bold shadow-[0_0_20px_rgba(16,185,129,0.4)] hover:scale-105 transition-all w-full sm:w-auto"
               >
-                Inscrição
+                Realizar Inscrição
               </Button>
               <Button
                 variant="outline"

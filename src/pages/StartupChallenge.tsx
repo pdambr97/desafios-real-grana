@@ -100,7 +100,7 @@ export default function StartupChallenge() {
               size="lg"
               className="w-full sm:w-auto bg-startup hover:bg-startup/90 text-white h-14 px-8 text-lg rounded-full font-bold shadow-[0_0_20px_rgba(124,58,237,0.4)] hover:scale-105 transition-all"
             >
-              Inscrição
+              Realizar Inscrição
             </Button>
             <Button
               variant="outline"

@@ -93,7 +93,7 @@ export default function Index() {
                 size="lg"
                 className="w-full sm:w-auto bg-gold text-navy hover:bg-gold/90 font-bold text-lg h-14 px-8 transition-transform hover:scale-105"
               >
-                Inscrição
+                Realizar Inscrição
               </Button>
               <Button
                 onClick={() => openModal('student')}
