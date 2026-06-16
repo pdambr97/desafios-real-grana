@@ -26,7 +26,10 @@ export default function StartupChallenge() {
       desc: 'Converse com potenciais clientes e entenda a viabilidade.',
     },
     { title: 'Criar solução', desc: 'Prototipar a ideia usando ferramentas no-code e IA.' },
-    { title: 'Modelo de negócio', desc: 'Como monetizar? Estruture custos, receitas e canais.' },
+    {
+      title: 'Construir modelo de negócio',
+      desc: 'Como monetizar? Estruture custos, receitas e canais.',
+    },
     { title: 'Pitch para banca', desc: 'Apresente para investidores reais na grande final.' },
   ]
 
@@ -128,24 +131,29 @@ export default function StartupChallenge() {
             </p>
           </div>
 
-          <div className="max-w-3xl mx-auto relative">
+          <div className="max-w-4xl mx-auto relative">
             <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5 bg-border -translate-x-1/2"></div>
 
             {timeline.map((step, i) => (
               <div
                 key={i}
-                className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group mb-12 last:mb-0 animate-fade-in-up"
+                className={`relative flex items-center justify-between group mb-12 last:mb-0 animate-fade-in-up ${
+                  i % 2 === 0 ? 'md:flex-row-reverse' : 'md:flex-row'
+                }`}
                 style={{ animationDelay: `${i * 100}ms` }}
               >
-                <div className="hidden md:block w-5/12"></div>
+                {/* Desktop Spacer */}
+                <div className="hidden md:block w-[45%]"></div>
 
+                {/* Marker */}
                 <div className="absolute left-8 md:left-1/2 w-8 h-8 rounded-full bg-background border-4 border-startup -translate-x-1/2 flex items-center justify-center z-10 group-hover:scale-125 transition-transform duration-300">
                   <div className="w-2 h-2 rounded-full bg-startup"></div>
                 </div>
 
-                <div className="w-full md:w-5/12 pl-20 md:pl-0">
+                {/* Content */}
+                <div className="w-full md:w-[45%] pl-20 md:pl-0">
                   <Card className="border border-border hover:border-startup/50 transition-colors shadow-sm hover:shadow-md">
-                    <CardContent className="p-6">
+                    <CardContent className="p-6 text-left">
                       <span className="text-startup font-bold text-sm mb-2 block">
                         Fase 0{i + 1}
                       </span>
