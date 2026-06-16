@@ -78,7 +78,7 @@ export default function XpArena() {
               size="lg"
               className="bg-xp hover:bg-xp/90 text-white h-14 px-8 text-lg rounded-none font-bold uppercase tracking-wider skew-x-[-10deg] shadow-[0_0_20px_rgba(249,115,22,0.4)] hover:scale-105 transition-all"
             >
-              <span className="skew-x-[10deg]">Agendar Apresentação para Escola</span>
+              <span className="skew-x-[10deg]">Inscrição</span>
             </Button>
             <Button
               variant="outline"
@@ -270,7 +270,7 @@ export default function XpArena() {
               size="lg"
               className="bg-xp text-white hover:bg-xp/90 h-16 px-10 text-lg font-bold uppercase tracking-wider rounded-none skew-x-[-10deg] shadow-[0_0_30px_rgba(249,115,22,0.3)] transition-transform hover:scale-105"
             >
-              <span className="skew-x-[10deg]">Agendar Apresentação Escolar</span>
+              <span className="skew-x-[10deg]">Agendar Apresentação</span>
             </Button>
           </div>
         </div>

@@ -93,7 +93,7 @@ export default function Index() {
                 size="lg"
                 className="w-full sm:w-auto bg-gold text-navy hover:bg-gold/90 font-bold text-lg h-14 px-8 transition-transform hover:scale-105"
               >
-                Quero inscrever minha escola
+                Inscrição
               </Button>
               <Button
                 onClick={() => openModal('student')}
@@ -330,7 +330,7 @@ export default function Index() {
                 size="lg"
                 className="bg-gold text-navy hover:bg-gold/90 font-bold text-lg h-14 px-8 rounded-full"
               >
-                Agende uma apresentação para sua escola
+                Agendar Apresentação
               </Button>
             </div>
           </div>

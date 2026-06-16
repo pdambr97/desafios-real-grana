@@ -63,8 +63,8 @@ export default function InvestorLeague() {
               Educação Financeira Aplicada
             </Badge>
             <h1 className="text-4xl md:text-6xl font-display font-black text-white mb-6 leading-tight">
-              Os alunos já falam sobre dinheiro. A diferença está em{' '}
-              <span className="text-gradient-investor">como aprendem.</span>
+              Um desafio onde os alunos atuam como{' '}
+              <span className="text-gradient-investor">gestores de fundos de investimento</span>
             </h1>
             <p className="text-xl text-gray-300 mb-10 leading-relaxed">
               Uma liga nacional onde estudantes aprendem investimentos na prática através de um
@@ -76,7 +76,7 @@ export default function InvestorLeague() {
                 size="lg"
                 className="bg-investor hover:bg-investor/90 text-navy h-14 px-8 text-lg rounded-full font-bold shadow-[0_0_20px_rgba(16,185,129,0.4)] hover:scale-105 transition-all w-full sm:w-auto"
               >
-                Agendar apresentação para minha escola
+                Inscrição
               </Button>
               <Button
                 variant="outline"
@@ -222,6 +222,31 @@ export default function InvestorLeague() {
                 ))}
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* School Pitch */}
+      <section className="py-24 relative overflow-hidden border-t border-border bg-muted/30">
+        <div className="container mx-auto px-4 text-center">
+          <div className="max-w-3xl mx-auto">
+            <Badge className="bg-investor/20 text-investor border-investor/30 mb-6">
+              Para Escolas
+            </Badge>
+            <h2 className="text-3xl md:text-4xl font-display font-bold mb-6">
+              Integre a Investor League à sua escola
+            </h2>
+            <p className="text-lg text-muted-foreground mb-10 leading-relaxed">
+              Descubra como nossa liga pode se encaixar na sua grade curricular ou atividades
+              extracurriculares, desenvolvendo a educação financeira de forma engajadora e prática.
+            </p>
+            <Button
+              onClick={() => openModal('school')}
+              size="lg"
+              className="bg-investor text-navy hover:bg-investor/90 h-14 px-10 text-lg font-bold rounded-full shadow-lg transition-transform hover:scale-105"
+            >
+              Agendar Apresentação
+            </Button>
           </div>
         </div>
       </section>
