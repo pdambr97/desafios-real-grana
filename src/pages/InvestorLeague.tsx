@@ -75,7 +75,7 @@ export default function InvestorLeague() {
             <Badge className="bg-investor/20 text-investor border-investor/30 mb-6 px-4 py-1.5 text-sm uppercase tracking-wider">
               Educação Financeira Aplicada
             </Badge>
-            <h1 className="text-4xl md:text-6xl font-display font-black text-white mb-6 leading-tight">
+            <h1 className="text-4xl md:text-6xl font-display font-black text-white mb-6 leading-normal">
               A geração que já investe.
             </h1>
             <p className="text-xl text-gray-300 mb-10 leading-relaxed">
