@@ -74,7 +74,7 @@ export default function Layout() {
               onClick={() => openModal()}
               className="bg-gold text-navy hover:bg-gold/90 font-semibold shadow-glow transition-all hover:scale-105 active:scale-95"
             >
-              Inscrever-se
+              Realizar Inscrição
             </Button>
           </div>
 
@@ -111,7 +111,7 @@ export default function Layout() {
               }}
               className="w-full mt-4 bg-gold text-navy hover:bg-gold/90 font-semibold"
             >
-              Inscrever-se
+              Realizar Inscrição
             </Button>
           </div>
         </div>
