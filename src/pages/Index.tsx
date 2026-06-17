@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom'
 import {
   Rocket,
   TrendingUp,
-  Gamepad2,
   ArrowRight,
   ShieldCheck,
   Trophy,
@@ -42,16 +41,6 @@ export default function Index() {
       hover: 'hover:shadow-[0_0_30px_rgba(16,185,129,0.3)]',
       path: '/investor-league',
       tags: ['Mercado', 'Estratégia'],
-    },
-    {
-      id: 'xp',
-      title: 'XP Arena',
-      desc: 'Competições de eSports focadas no desenvolvimento do "Currículo Invisível" (Soft Skills).',
-      icon: <Gamepad2 className="w-10 h-10 text-xp" />,
-      color: 'bg-xp',
-      hover: 'hover:shadow-[0_0_30px_rgba(249,115,22,0.3)]',
-      path: '/xp-arena',
-      tags: ['eSports', 'Soft Skills'],
     },
   ]
 
@@ -131,7 +120,7 @@ export default function Index() {
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto mb-16 animate-fade-in-up">
             <h2 className="text-3xl md:text-4xl font-display font-bold text-navy dark:text-white mb-4">
-              Três jornadas, um objetivo: <br className="hidden md:block" /> Preparação real.
+              Duas jornadas, um objetivo: <br className="hidden md:block" /> Preparação real.
             </h2>
             <p className="text-lg text-muted-foreground">
               Escolha a trilha que mais combina com o perfil da sua escola ou equipe e entre na
@@ -139,7 +128,7 @@ export default function Index() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 max-w-4xl mx-auto gap-8">
             {challenges.map((challenge, i) => (
               <div
                 key={challenge.id}
@@ -219,7 +208,7 @@ export default function Index() {
           </Badge>
           <h2 className="text-3xl md:text-4xl font-display font-bold mb-12">Calendário 2026</h2>
 
-          <div className="grid md:grid-cols-3 gap-8 text-left">
+          <div className="grid md:grid-cols-2 max-w-4xl mx-auto gap-8 text-left">
             <div className="bg-white/5 border border-white/10 p-8 rounded-2xl hover:bg-white/10 transition-colors">
               <div className="text-investor mb-6 bg-investor/10 w-16 h-16 rounded-xl flex items-center justify-center">
                 <TrendingUp className="w-8 h-8" />
@@ -252,24 +241,6 @@ export default function Index() {
                 </li>
                 <li className="flex items-center gap-3">
                   <Trophy className="w-4 h-4 shrink-0 text-gold" /> Pitch em Novembro
-                </li>
-              </ul>
-            </div>
-
-            <div className="bg-white/5 border border-white/10 p-8 rounded-2xl hover:bg-white/10 transition-colors">
-              <div className="text-xp mb-6 bg-xp/10 w-16 h-16 rounded-xl flex items-center justify-center">
-                <Gamepad2 className="w-8 h-8" />
-              </div>
-              <h3 className="text-2xl font-bold mb-2">XP Arena</h3>
-              <p className="text-sm text-gray-400 mb-6 line-clamp-2">
-                Torneio escolar de eSports focado no desenvolvimento de soft skills.
-              </p>
-              <ul className="space-y-3 text-sm text-gray-300">
-                <li className="flex items-center gap-3">
-                  <Calendar className="w-4 h-4 shrink-0 text-gold" /> Ago - Nov 2026
-                </li>
-                <li className="flex items-center gap-3">
-                  <Trophy className="w-4 h-4 shrink-0 text-gold" /> Playoffs em Outubro
                 </li>
               </ul>
             </div>

@@ -26,7 +26,6 @@ export default function Layout() {
     { name: 'Início', path: '/' },
     { name: 'Startup Challenge', path: '/startup-challenge' },
     { name: 'Investor League', path: '/investor-league' },
-    { name: 'XP Arena', path: '/xp-arena' },
   ]
 
   return (
@@ -169,11 +168,6 @@ export default function Layout() {
                     className="text-gray-400 hover:text-white transition-colors"
                   >
                     Investor League
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/xp-arena" className="text-gray-400 hover:text-white transition-colors">
-                    XP Arena
                   </Link>
                 </li>
               </ul>

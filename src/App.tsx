@@ -5,7 +5,6 @@ import { TooltipProvider } from '@/components/ui/tooltip'
 import Index from './pages/Index'
 import StartupChallenge from './pages/StartupChallenge'
 import InvestorLeague from './pages/InvestorLeague'
-import XpArena from './pages/XpArena'
 import NotFound from './pages/NotFound'
 import Layout from './components/Layout'
 import { RegistrationProvider } from './stores/useRegistrationStore'
@@ -21,7 +20,6 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/startup-challenge" element={<StartupChallenge />} />
             <Route path="/investor-league" element={<InvestorLeague />} />
-            <Route path="/xp-arena" element={<XpArena />} />
           </Route>
           <Route path="*" element={<NotFound />} />
         </Routes>
