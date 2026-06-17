@@ -95,10 +95,9 @@ export default function StartupChallenge() {
             A geração que já inova.
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-10 leading-relaxed">
-            A maior competição escolar de empreendedorismo e inteligência artificial do Brasil. Mais
-            do que uma feira de ciências. O Startup Challenge desafia estudantes a identificar
-            problemas reais, criar soluções inovadoras, desenvolver modelos de negócio e apresentar
-            suas ideias para uma banca avaliadora.
+            A competição mais inovadora de empreendedorismo. O Startup Challenge desafia estudantes
+            à identificarem problemas reais, criarem soluções inovadoras, validando as ideias com
+            uma banca avaliadora.
           </p>
           <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
             <Button
