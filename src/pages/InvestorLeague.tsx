@@ -281,6 +281,26 @@ export default function InvestorLeague() {
               </CardContent>
             </Card>
           </div>
+
+          <div className="mt-16 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <Button
+              variant="outline"
+              size="lg"
+              className="w-full sm:w-auto font-bold border-investor text-investor hover:bg-investor hover:text-white"
+              onClick={() => window.open('#', '_blank')}
+            >
+              <Download className="mr-2 w-5 h-5" />
+              BAIXAR REGULAMENTO
+            </Button>
+            <Button
+              size="lg"
+              className="w-full sm:w-auto font-bold bg-investor text-white hover:bg-investor/90"
+              onClick={() => openModal('school')}
+            >
+              <Presentation className="mr-2 w-5 h-5" />
+              AGENDAR APRESENTAÇÃO PARA MINHA ESCOLA
+            </Button>
+          </div>
         </div>
       </section>
 
@@ -472,27 +492,6 @@ export default function InvestorLeague() {
           </Accordion>
         </div>
       </section>
-
-      {/* Fixed Bottom Action Bar */}
-      <div className="fixed bottom-0 left-0 w-full bg-background/80 backdrop-blur-lg border-t border-border z-50 p-4 shadow-[0_-10px_30px_rgba(0,0,0,0.1)]">
-        <div className="container mx-auto px-4 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Button
-            variant="outline"
-            className="w-full sm:w-auto font-bold border-investor text-investor hover:bg-investor hover:text-white"
-            onClick={() => window.open('#', '_blank')}
-          >
-            <Download className="mr-2 w-4 h-4" />
-            BAIXAR REGULAMENTO
-          </Button>
-          <Button
-            className="w-full sm:w-auto font-bold bg-investor text-white hover:bg-investor/90"
-            onClick={() => openModal('school')}
-          >
-            <Presentation className="mr-2 w-4 h-4" />
-            AGENDAR APRESENTAÇÃO PARA MINHA ESCOLA
-          </Button>
-        </div>
-      </div>
     </div>
   )
 }
