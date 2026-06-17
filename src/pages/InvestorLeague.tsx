@@ -76,7 +76,7 @@ export default function InvestorLeague() {
               Educação Financeira Aplicada
             </Badge>
             <h1 className="text-4xl md:text-6xl font-display font-black text-white mb-6 leading-normal">
-              A geração que já investe.
+              Alunos como gestores de investimento
             </h1>
             <p className="text-xl text-gray-300 mb-10 leading-relaxed">
               Um desafio nacional onde estudantes aprendem investimentos na prática através de um
