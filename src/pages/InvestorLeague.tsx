@@ -76,10 +76,7 @@ export default function InvestorLeague() {
               Educação Financeira Aplicada
             </Badge>
             <h1 className="text-4xl md:text-6xl font-display font-black text-white mb-6 leading-tight">
-              Os alunos já falam sobre dinheiro.{' '}
-              <span className="text-gradient-investor">
-                Agora podem aprender investimentos na prática.
-              </span>
+              A geração que já investe.
             </h1>
             <p className="text-xl text-gray-300 mb-10 leading-relaxed">
               Um desafio nacional onde estudantes aprendem investimentos na prática através de um
@@ -401,46 +398,46 @@ export default function InvestorLeague() {
       {/* O que os alunos desenvolvem & Cronograma */}
       <section className="py-24 bg-navy text-white">
         <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <h2 className="text-3xl md:text-4xl font-display font-bold mb-8">
-                O que os alunos desenvolvem
-              </h2>
-              <div className="grid grid-cols-2 gap-4">
-                {skills.map((skill, i) => (
-                  <div
-                    key={i}
-                    className="flex flex-col items-center text-center gap-4 p-6 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors group"
-                  >
-                    <div className="w-14 h-14 rounded-full bg-investor/20 flex items-center justify-center group-hover:scale-110 transition-transform text-investor">
-                      {skill.icon}
-                    </div>
-                    <span className="font-semibold">{skill.name}</span>
+          <div className="mb-16 text-center">
+            <h2 className="text-3xl md:text-4xl font-display font-bold mb-8">
+              O que os alunos desenvolvem
+            </h2>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+              {skills.map((skill, i) => (
+                <div
+                  key={i}
+                  className="flex flex-col items-center text-center gap-4 p-6 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors group"
+                >
+                  <div className="w-14 h-14 rounded-full bg-investor/20 flex items-center justify-center group-hover:scale-110 transition-transform text-investor">
+                    {skill.icon}
                   </div>
-                ))}
-              </div>
+                  <span className="font-semibold text-sm md:text-base">{skill.name}</span>
+                </div>
+              ))}
             </div>
+          </div>
 
-            <div className="bg-white/5 p-8 rounded-3xl border border-white/10">
-              <Badge className="bg-investor/20 text-investor mb-6 border-none text-sm px-4">
+          <div className="bg-white/5 p-8 rounded-3xl border border-white/10 mt-16 max-w-5xl mx-auto">
+            <div className="text-center mb-10">
+              <Badge className="bg-investor/20 text-investor border-none text-sm px-4 py-1.5">
                 Cronograma 2026
               </Badge>
-              <div className="space-y-6 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-white/20 before:to-transparent">
-                {schedule.map((item, i) => (
-                  <div
-                    key={i}
-                    className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active"
-                  >
-                    <div className="flex items-center justify-center w-10 h-10 rounded-full border border-white/30 bg-navy text-white shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow relative z-10">
-                      <Calendar className="w-4 h-4 text-investor" />
-                    </div>
-                    <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white/5 p-4 rounded-xl border border-white/10">
-                      <div className="text-investor font-bold text-sm mb-1">{item.date}</div>
-                      <div className="text-slate-300 font-medium">{item.title}</div>
+            </div>
+
+            <div className="flex flex-col md:flex-row justify-between items-stretch gap-6 relative before:hidden md:before:block before:absolute before:top-5 before:left-0 before:w-full before:h-0.5 before:bg-gradient-to-r before:from-transparent before:via-white/20 before:to-transparent">
+              {schedule.map((item, i) => (
+                <div key={i} className="relative flex-1 text-center group">
+                  <div className="flex items-center justify-center w-10 h-10 mx-auto rounded-full border border-white/30 bg-navy text-white shadow relative z-10 mb-4 group-hover:scale-110 transition-transform">
+                    <Calendar className="w-4 h-4 text-investor" />
+                  </div>
+                  <div className="bg-white/5 p-4 rounded-xl border border-white/10 h-full flex flex-col justify-center">
+                    <div className="text-investor font-bold text-sm mb-2">{item.date}</div>
+                    <div className="text-slate-300 font-medium text-sm leading-snug">
+                      {item.title}
                     </div>
                   </div>
-                ))}
-              </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>

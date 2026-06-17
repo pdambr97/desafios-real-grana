@@ -92,11 +92,11 @@ export default function StartupChallenge() {
             Inovação & Empreendedorismo
           </Badge>
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-black text-white mb-6 leading-tight max-w-5xl mx-auto">
-            STARTUP CHALLENGE - A maior competição escolar de empreendedorismo e inteligência
-            artificial do Brasil.
+            A geração que já inova.
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-10 leading-relaxed">
-            Mais do que uma feira de ciências. O Startup Challenge desafia estudantes a identificar
+            A maior competição escolar de empreendedorismo e inteligência artificial do Brasil. Mais
+            do que uma feira de ciências. O Startup Challenge desafia estudantes a identificar
             problemas reais, criar soluções inovadoras, desenvolver modelos de negócio e apresentar
             suas ideias para uma banca avaliadora.
           </p>
