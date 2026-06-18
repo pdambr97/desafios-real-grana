@@ -40,10 +40,10 @@ export default function InvestorLeague() {
   ]
 
   const schedule = [
-    { date: 'Março/2026', title: 'Abertura da Liga e Treinamento na Plataforma' },
-    { date: 'Abril/2026', title: 'Fase 1: Liga Regular (4 semanas de operações)' },
-    { date: 'Maio/2026', title: 'Análise de Resultados e Seleção dos Finalistas' },
-    { date: 'Junho/2026', title: 'Fase 2: Defesas do Investment Case e Premiação' },
+    { date: 'Setembro/2026', title: 'Abertura da Liga e Treinamento na Plataforma' },
+    { date: 'Outubro/2026', title: 'Fase 1: Liga Regular (4 semanas de operações)' },
+    { date: 'Novembro/2026', title: 'Análise de Resultados e Seleção dos Finalistas' },
+    { date: 'Novembro/2026', title: 'Fase 2: Defesas do Investment Case e Premiação' },
   ]
 
   const faqs = [
@@ -84,7 +84,7 @@ export default function InvestorLeague() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button
-                onClick={() => openModal('school')}
+                onClick={() => openModal('school', 'Investor League')}
                 size="lg"
                 className="bg-investor hover:bg-investor/90 text-navy h-14 px-8 text-lg rounded-full font-bold shadow-[0_0_20px_rgba(16,185,129,0.4)] hover:scale-105 transition-all w-full sm:w-auto"
               >
@@ -292,7 +292,7 @@ export default function InvestorLeague() {
             <Button
               size="lg"
               className="w-full sm:w-auto font-bold bg-investor text-white hover:bg-investor/90"
-              onClick={() => openModal('school')}
+              onClick={() => openModal('school', 'Investor League')}
             >
               <Presentation className="mr-2 w-5 h-5" />
               AGENDAR APRESENTAÇÃO PARA MINHA ESCOLA
@@ -417,20 +417,20 @@ export default function InvestorLeague() {
             </div>
           </div>
 
-          <div className="bg-white/5 p-8 rounded-3xl border border-white/10 mt-16 max-w-5xl mx-auto">
+          <div className="bg-white/5 p-8 rounded-3xl border border-white/10 mt-16 w-full max-w-6xl mx-auto">
             <div className="text-center mb-10">
               <Badge className="bg-investor/20 text-investor border-none text-sm px-4 py-1.5">
                 Cronograma 2026
               </Badge>
             </div>
 
-            <div className="flex flex-col md:flex-row justify-between items-stretch gap-6 relative before:hidden md:before:block before:absolute before:top-5 before:left-0 before:w-full before:h-0.5 before:bg-gradient-to-r before:from-transparent before:via-white/20 before:to-transparent">
+            <div className="grid grid-cols-1 md:grid-cols-4 justify-between items-stretch gap-6 relative before:hidden md:before:block before:absolute before:top-5 before:left-0 before:w-full before:h-0.5 before:bg-gradient-to-r before:from-transparent before:via-white/20 before:to-transparent">
               {schedule.map((item, i) => (
-                <div key={i} className="relative flex-1 text-center group">
+                <div key={i} className="relative w-full text-center group">
                   <div className="flex items-center justify-center w-10 h-10 mx-auto rounded-full border border-white/30 bg-navy text-white shadow relative z-10 mb-4 group-hover:scale-110 transition-transform">
                     <Calendar className="w-4 h-4 text-investor" />
                   </div>
-                  <div className="bg-white/5 p-4 rounded-xl border border-white/10 h-full flex flex-col justify-center">
+                  <div className="bg-white/5 p-4 rounded-xl border border-white/10 h-full flex flex-col justify-center min-h-[120px]">
                     <div className="text-investor font-bold text-sm mb-2">{item.date}</div>
                     <div className="text-slate-300 font-medium text-sm leading-snug">
                       {item.title}
@@ -458,7 +458,7 @@ export default function InvestorLeague() {
               extracurriculares, desenvolvendo a educação financeira de forma engajadora e prática.
             </p>
             <Button
-              onClick={() => openModal('school')}
+              onClick={() => openModal('school', 'Investor League')}
               size="lg"
               className="bg-investor text-navy hover:bg-investor/90 h-14 px-10 text-lg font-bold rounded-full shadow-lg transition-transform hover:scale-105"
             >

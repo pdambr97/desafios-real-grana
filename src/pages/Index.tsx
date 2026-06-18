@@ -219,10 +219,10 @@ export default function Index() {
               </p>
               <ul className="space-y-3 text-sm text-gray-300">
                 <li className="flex items-center gap-3">
-                  <Calendar className="w-4 h-4 shrink-0 text-gold" /> Mar - Jun 2026
+                  <Calendar className="w-4 h-4 shrink-0 text-gold" /> Set - Nov 2026
                 </li>
                 <li className="flex items-center gap-3">
-                  <Trophy className="w-4 h-4 shrink-0 text-gold" /> Final em Junho
+                  <Trophy className="w-4 h-4 shrink-0 text-gold" /> Final em Novembro
                 </li>
               </ul>
             </div>
@@ -313,7 +313,7 @@ export default function Index() {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 text-center">
             <div className="space-y-2">
-              <StatsCounter end={450} suffix="+" />
+              <StatsCounter end={25} suffix="+" />
               <p className="text-navy dark:text-white font-bold uppercase tracking-wider text-sm">
                 Escolas Parceiras
               </p>

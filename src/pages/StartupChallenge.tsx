@@ -101,7 +101,7 @@ export default function StartupChallenge() {
           </p>
           <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
             <Button
-              onClick={() => openModal('school')}
+              onClick={() => openModal('school', 'Startup Challenge')}
               size="lg"
               className="w-full sm:w-auto bg-startup hover:bg-startup/90 text-white h-14 px-8 text-lg rounded-full font-bold shadow-[0_0_20px_rgba(124,58,237,0.4)] hover:scale-105 transition-all"
             >
@@ -266,7 +266,7 @@ export default function StartupChallenge() {
             <Button
               size="lg"
               className="w-full sm:w-auto font-bold bg-startup text-white hover:bg-startup/90"
-              onClick={() => openModal('school')}
+              onClick={() => openModal('school', 'Startup Challenge')}
             >
               <Presentation className="mr-2 w-5 h-5" />
               AGENDAR APRESENTAÇÃO PARA MINHA ESCOLA
@@ -411,7 +411,7 @@ export default function StartupChallenge() {
                 forma prática.
               </p>
               <Button
-                onClick={() => openModal('school')}
+                onClick={() => openModal('school', 'Startup Challenge')}
                 size="lg"
                 className="bg-startup text-white hover:bg-startup/90 h-14 px-8 rounded-full font-bold transition-all w-full sm:w-auto"
               >

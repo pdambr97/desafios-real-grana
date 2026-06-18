@@ -15,7 +15,7 @@ import { CheckCircle2 } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
 export function RegistrationModal() {
-  const { isOpen, closeModal } = useRegistrationStore()
+  const { isOpen, closeModal, challenge } = useRegistrationStore()
   const [step, setStep] = useState(1)
   const { toast } = useToast()
 
@@ -27,6 +27,19 @@ export function RegistrationModal() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
+
+    const formData = new FormData(e.target as HTMLFormElement)
+    const payload = {
+      challenge_type: challenge || 'Geral',
+      teamName: formData.get('teamName'),
+      teacherName: formData.get('teacherName'),
+      email: formData.get('email'),
+      whatsapp: formData.get('whatsapp'),
+      schoolName: formData.get('schoolName'),
+    }
+
+    console.log('Registration Payload:', payload)
+
     setStep(2) // Success step
     toast({
       title: 'Inscrição recebida!',
@@ -60,29 +73,62 @@ export function RegistrationModal() {
               )}
             >
               <form onSubmit={handleSubmit} className="space-y-4">
+                {challenge && (
+                  <div className="bg-muted p-3 rounded-lg text-sm mb-2 text-center text-muted-foreground font-medium border border-border">
+                    Desafio selecionado: <strong className="text-foreground">{challenge}</strong>
+                  </div>
+                )}
+
                 <div className="grid gap-2">
                   <Label htmlFor="teamName">Nome da Equipe</Label>
-                  <Input id="teamName" required placeholder="Digite o nome da equipe" />
+                  <Input
+                    id="teamName"
+                    name="teamName"
+                    required
+                    placeholder="Digite o nome da equipe"
+                  />
                 </div>
 
                 <div className="grid gap-2">
                   <Label htmlFor="teacherName">Nome do Professor/Coordenador Responsável</Label>
-                  <Input id="teacherName" required placeholder="Digite seu nome completo" />
+                  <Input
+                    id="teacherName"
+                    name="teacherName"
+                    required
+                    placeholder="Digite seu nome completo"
+                  />
                 </div>
 
                 <div className="grid gap-2">
                   <Label htmlFor="email">E-mail do Professor/Coordenador Responsável</Label>
-                  <Input id="email" type="email" required placeholder="seu@email.com" />
+                  <Input
+                    id="email"
+                    name="email"
+                    type="email"
+                    required
+                    placeholder="seu@email.com"
+                  />
                 </div>
 
                 <div className="grid gap-2">
                   <Label htmlFor="whatsapp">WhatsApp do Professor/Coordenador Responsável</Label>
-                  <Input id="whatsapp" type="tel" required placeholder="(00) 00000-0000" />
+                  <Input
+                    id="whatsapp"
+                    name="whatsapp"
+                    type="tel"
+                    required
+                    placeholder="(00) 00000-0000"
+                  />
                 </div>
 
                 <div className="grid gap-2">
                   <Label htmlFor="schoolName">Nome da Escola</Label>
-                  <Input id="schoolName" required placeholder="Digite o nome da escola" />
+                  <Input
+                    id="schoolName"
+                    name="schoolName"
+                    required
+                    placeholder="Digite o nome da escola"
+                  />
                 </div>
 
                 <div className="pt-4">
