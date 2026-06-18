@@ -93,9 +93,9 @@ export function RegistrationModal() {
                       </SelectTrigger>
                       <SelectContent>
                         <SelectItem value="Investor League">Investor League</SelectItem>
-                        <SelectItem value="Real Grana">Real Grana</SelectItem>
-                        <SelectItem value="Interesse nos dois desafios">
-                          Interesse nos dois desafios
+                        <SelectItem value="Startup Challenge">Startup Challenge</SelectItem>
+                        <SelectItem value="Investor League E Startup Challenge">
+                          Investor League E Startup Challenge
                         </SelectItem>
                       </SelectContent>
                     </Select>
