@@ -426,11 +426,11 @@ export default function InvestorLeague() {
 
             <div className="grid grid-cols-1 md:grid-cols-4 justify-between items-stretch gap-6 relative before:hidden md:before:block before:absolute before:top-5 before:left-0 before:w-full before:h-0.5 before:bg-gradient-to-r before:from-transparent before:via-white/20 before:to-transparent">
               {schedule.map((item, i) => (
-                <div key={i} className="relative w-full text-center group">
-                  <div className="flex items-center justify-center w-10 h-10 mx-auto rounded-full border border-white/30 bg-navy text-white shadow relative z-10 mb-4 group-hover:scale-110 transition-transform">
+                <div key={i} className="relative w-full text-center group flex flex-col">
+                  <div className="flex items-center justify-center w-10 h-10 mx-auto shrink-0 rounded-full border border-white/30 bg-navy text-white shadow relative z-10 mb-4 group-hover:scale-110 transition-transform">
                     <Calendar className="w-4 h-4 text-investor" />
                   </div>
-                  <div className="bg-white/5 p-4 rounded-xl border border-white/10 h-full flex flex-col justify-center min-h-[120px]">
+                  <div className="bg-white/5 p-4 rounded-xl border border-white/10 flex-1 flex flex-col justify-center min-h-[120px]">
                     <div className="text-investor font-bold text-sm mb-2">{item.date}</div>
                     <div className="text-slate-300 font-medium text-sm leading-snug">
                       {item.title}
