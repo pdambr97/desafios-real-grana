@@ -13,6 +13,13 @@ import { useToast } from '@/hooks/use-toast'
 import useRegistrationStore from '@/stores/useRegistrationStore'
 import { CheckCircle2 } from 'lucide-react'
 import { cn } from '@/lib/utils'
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select'
 
 export function RegistrationModal() {
   const { isOpen, closeModal, challenge } = useRegistrationStore()
@@ -30,7 +37,7 @@ export function RegistrationModal() {
 
     const formData = new FormData(e.target as HTMLFormElement)
     const payload = {
-      challenge_type: challenge || 'Geral',
+      challenge_type: challenge || formData.get('interestChallenge') || 'Geral',
       teamName: formData.get('teamName'),
       teacherName: formData.get('teacherName'),
       email: formData.get('email'),
@@ -73,9 +80,25 @@ export function RegistrationModal() {
               )}
             >
               <form onSubmit={handleSubmit} className="space-y-4">
-                {challenge && (
+                {challenge ? (
                   <div className="bg-muted p-3 rounded-lg text-sm mb-2 text-center text-muted-foreground font-medium border border-border">
                     Desafio selecionado: <strong className="text-foreground">{challenge}</strong>
+                  </div>
+                ) : (
+                  <div className="grid gap-2">
+                    <Label htmlFor="interestChallenge">Desafio de interesse</Label>
+                    <Select name="interestChallenge" required>
+                      <SelectTrigger id="interestChallenge">
+                        <SelectValue placeholder="Selecione o desafio de interesse" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="Investor League">Investor League</SelectItem>
+                        <SelectItem value="Real Grana">Real Grana</SelectItem>
+                        <SelectItem value="Interesse nos dois desafios">
+                          Interesse nos dois desafios
+                        </SelectItem>
+                      </SelectContent>
+                    </Select>
                   </div>
                 )}
 
