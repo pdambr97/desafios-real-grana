@@ -308,16 +308,27 @@ export default function StartupChallenge() {
             </Card>
           </div>
 
-          <div className="mt-16 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button
-              variant="outline"
-              size="lg"
-              className="w-full sm:w-auto font-bold border-startup text-startup hover:bg-startup hover:text-white"
-              onClick={() => window.open('#', '_blank')}
-            >
-              <Download className="mr-2 w-5 h-5" />
-              BAIXAR REGULAMENTO
-            </Button>
+          <div className="mt-16 flex flex-col items-center justify-center gap-4">
+            <div className="flex flex-col sm:flex-row w-full sm:w-auto gap-4">
+              <Button
+                variant="outline"
+                size="lg"
+                className="w-full sm:w-auto font-bold border-startup text-startup hover:bg-startup hover:text-white"
+                onClick={() => window.open('#', '_blank')}
+              >
+                <Download className="mr-2 w-5 h-5" />
+                BAIXAR REGULAMENTO
+              </Button>
+              <Button
+                variant="outline"
+                size="lg"
+                className="w-full sm:w-auto font-bold border-startup text-startup hover:bg-startup hover:text-white"
+                onClick={() => window.open('#', '_blank')}
+              >
+                <Download className="mr-2 w-5 h-5" />
+                BAIXAR APRESENTAÇÃO
+              </Button>
+            </div>
             <Button
               size="lg"
               className="w-full sm:w-auto font-bold bg-startup text-white hover:bg-startup/90"
@@ -329,7 +340,7 @@ export default function StartupChallenge() {
               }
             >
               <Presentation className="mr-2 w-5 h-5" />
-              AGENDAR APRESENTAÇÃO PARA MINHA ESCOLA
+              AGENDAR REUNIÃO PARA MINHA ESCOLA
             </Button>
           </div>
         </div>
