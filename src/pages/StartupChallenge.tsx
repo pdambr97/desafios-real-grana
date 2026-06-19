@@ -266,7 +266,12 @@ export default function StartupChallenge() {
             <Button
               size="lg"
               className="w-full sm:w-auto font-bold bg-startup text-white hover:bg-startup/90"
-              onClick={() => openModal('school', 'Startup Challenge')}
+              onClick={() =>
+                window.open(
+                  'https://wa.me/5511973408493?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20os%20desafios',
+                  '_blank',
+                )
+              }
             >
               <Presentation className="mr-2 w-5 h-5" />
               AGENDAR APRESENTAÇÃO PARA MINHA ESCOLA

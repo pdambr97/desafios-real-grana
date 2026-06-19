@@ -218,7 +218,7 @@ export default function Layout() {
               />
               <img
                 src="https://img.usecurling.com/i?q=shield&shape=outline&color=white"
-                alt="Olimpíada Ágora"
+                alt="Olimpíada Ágora & ESEG"
                 className="h-6"
               />
             </div>

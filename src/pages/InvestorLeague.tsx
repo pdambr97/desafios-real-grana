@@ -292,7 +292,12 @@ export default function InvestorLeague() {
             <Button
               size="lg"
               className="w-full sm:w-auto font-bold bg-investor text-white hover:bg-investor/90"
-              onClick={() => openModal('school', 'Investor League')}
+              onClick={() =>
+                window.open(
+                  'https://wa.me/5511973408493?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20os%20desafios',
+                  '_blank',
+                )
+              }
             >
               <Presentation className="mr-2 w-5 h-5" />
               AGENDAR APRESENTAÇÃO PARA MINHA ESCOLA

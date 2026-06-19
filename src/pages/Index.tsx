@@ -1,17 +1,5 @@
 import { Link } from 'react-router-dom'
-import {
-  Rocket,
-  TrendingUp,
-  ArrowRight,
-  ShieldCheck,
-  Trophy,
-  Target,
-  Calendar,
-  FileText,
-  Presentation,
-  BookOpen,
-  HelpCircle,
-} from 'lucide-react'
+import { Rocket, TrendingUp, ArrowRight, ShieldCheck, Trophy, Target, Calendar } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { StatsCounter } from '@/components/StatsCounter'
@@ -248,66 +236,6 @@ export default function Index() {
         </div>
       </section>
 
-      {/* Recursos para Escolas */}
-      <section className="py-24 bg-background">
-        <div className="container mx-auto px-4 max-w-5xl text-center">
-          <h2 className="text-3xl md:text-4xl font-display font-bold text-navy dark:text-white mb-12">
-            Recursos para Escolas
-          </h2>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
-            <Button
-              variant="outline"
-              className="h-auto py-8 flex flex-col gap-4 hover:border-gold hover:text-gold transition-colors bg-card"
-            >
-              <FileText className="w-8 h-8" />
-              <span className="font-semibold">Regulamentos</span>
-            </Button>
-            <Button
-              variant="outline"
-              className="h-auto py-8 flex flex-col gap-4 hover:border-gold hover:text-gold transition-colors bg-card"
-            >
-              <Presentation className="w-8 h-8" />
-              <span className="font-semibold">Apresentação Institucional</span>
-            </Button>
-            <Button
-              variant="outline"
-              className="h-auto py-8 flex flex-col gap-4 hover:border-gold hover:text-gold transition-colors bg-card"
-            >
-              <BookOpen className="w-8 h-8" />
-              <span className="font-semibold">Guia do Professor</span>
-            </Button>
-            <Button
-              variant="outline"
-              className="h-auto py-8 flex flex-col gap-4 hover:border-gold hover:text-gold transition-colors bg-card"
-            >
-              <HelpCircle className="w-8 h-8" />
-              <span className="font-semibold">Perguntas Frequentes</span>
-            </Button>
-          </div>
-
-          <div className="p-10 md:p-14 bg-navy text-white rounded-3xl shadow-2xl relative overflow-hidden">
-            <div className="absolute inset-0 bg-[url('https://img.usecurling.com/p/1920/1080?q=school%20campus&color=black')] opacity-20 bg-cover bg-center mix-blend-overlay"></div>
-            <div className="relative z-10">
-              <h3 className="text-3xl md:text-4xl font-bold mb-6 font-display">
-                Leve os desafios para a sua instituição
-              </h3>
-              <p className="text-gray-300 mb-10 max-w-2xl mx-auto text-lg">
-                Nossa equipe está pronta para apresentar o projeto detalhadamente e ajudar a
-                construir a melhor trilha de desenvolvimento para os seus alunos.
-              </p>
-              <Button
-                onClick={() => openModal('school')}
-                size="lg"
-                className="bg-gold text-navy hover:bg-gold/90 font-bold text-lg h-14 px-8 rounded-full"
-              >
-                Agendar Apresentação
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Numbers Section */}
       <section className="py-20 bg-muted/50 border-t border-border">
         <div className="container mx-auto px-4">
@@ -380,7 +308,7 @@ export default function Index() {
                 {[
                   { name: 'OBInvest', query: 'bank' },
                   { name: 'BRHSIC', query: 'global' },
-                  { name: 'Olimpíada Ágora', query: 'monument' },
+                  { name: 'Olimpíada Ágora & ESEG', query: 'monument' },
                   { name: 'Preparatório OLITEF', query: 'star' },
                 ].map((partner, i) => (
                   <div
