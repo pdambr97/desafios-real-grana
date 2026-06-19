@@ -156,9 +156,9 @@ export default function InvestorLeague() {
               </Button>
             </div>
           </div>
-          <div className="relative hidden md:block">
+          <div className="relative hidden md:block scale-110">
             {/* Abstract representation of charts */}
-            <div className="absolute inset-0 bg-gradient-to-tr from-investor/20 to-transparent rounded-2xl border border-investor/30 backdrop-blur-sm p-6 transform rotate-3 scale-105"></div>
+            <div className="absolute inset-0 bg-gradient-to-tr from-investor/20 to-transparent rounded-2xl border border-investor/30 backdrop-blur-sm p-6 transform scale-105"></div>
             <div className="relative z-10 drop-shadow-2xl">
               <img
                 src={platformPreviewImage}
