@@ -11,9 +11,11 @@ import { RegistrationProvider } from './stores/useRegistrationStore'
 import { RegistrationModal } from '@/components/RegistrationModal'
 import { MeetingModal } from '@/components/MeetingModal'
 import { AuthProvider } from '@/hooks/use-auth'
+import { ScrollToTop } from '@/components/ScrollToTop'
 
 const App = () => (
   <BrowserRouter>
+    <ScrollToTop />
     <AuthProvider>
       <RegistrationProvider>
         <TooltipProvider>
