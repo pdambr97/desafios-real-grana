@@ -337,7 +337,7 @@ export default function InvestorLeague() {
                 variant="outline"
                 size="lg"
                 className="w-full sm:w-auto font-bold border-investor text-investor hover:bg-investor hover:text-white"
-                onClick={() => window.open('#', '_blank')}
+                onClick={() => window.open('/regulamento-investor-league-2026.pdf', '_blank')}
               >
                 <Download className="mr-2 w-5 h-5" />
                 BAIXAR REGULAMENTO

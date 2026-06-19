@@ -314,7 +314,7 @@ export default function StartupChallenge() {
                 variant="outline"
                 size="lg"
                 className="w-full sm:w-auto font-bold border-startup text-startup hover:bg-startup hover:text-white"
-                onClick={() => window.open('#', '_blank')}
+                onClick={() => window.open('/regulamento-startup-challenge-2026.pdf', '_blank')}
               >
                 <Download className="mr-2 w-5 h-5" />
                 BAIXAR REGULAMENTO
