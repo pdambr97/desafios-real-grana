@@ -5,10 +5,13 @@ export type ChallengeType = 'Startup Challenge' | 'Investor League' | null
 
 interface RegistrationState {
   isOpen: boolean
+  isMeetingModalOpen: boolean
   selectedRole: RegistrationRole
   challenge: ChallengeType
   openModal: (role?: RegistrationRole, challenge?: ChallengeType) => void
   closeModal: () => void
+  openMeetingModal: () => void
+  closeMeetingModal: () => void
   setRole: (role: RegistrationRole) => void
 }
 
@@ -16,6 +19,7 @@ const RegistrationContext = createContext<RegistrationState | undefined>(undefin
 
 export function RegistrationProvider({ children }: { children: ReactNode }) {
   const [isOpen, setIsOpen] = useState(false)
+  const [isMeetingModalOpen, setIsMeetingModalOpen] = useState(false)
   const [selectedRole, setSelectedRole] = useState<RegistrationRole>(null)
   const [challenge, setChallenge] = useState<ChallengeType>(null)
 
@@ -34,9 +38,25 @@ export function RegistrationProvider({ children }: { children: ReactNode }) {
     }, 300)
   }
 
+  const openMeetingModal = () => setIsMeetingModalOpen(true)
+
+  const closeMeetingModal = () => {
+    setIsMeetingModalOpen(false)
+  }
+
   return (
     <RegistrationContext.Provider
-      value={{ isOpen, selectedRole, challenge, openModal, closeModal, setRole: setSelectedRole }}
+      value={{
+        isOpen,
+        isMeetingModalOpen,
+        selectedRole,
+        challenge,
+        openModal,
+        closeModal,
+        openMeetingModal,
+        closeMeetingModal,
+        setRole: setSelectedRole,
+      }}
     >
       {children}
     </RegistrationContext.Provider>

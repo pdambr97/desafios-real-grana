@@ -8,23 +8,30 @@ import InvestorLeague from './pages/InvestorLeague'
 import NotFound from './pages/NotFound'
 import Layout from './components/Layout'
 import { RegistrationProvider } from './stores/useRegistrationStore'
+import { RegistrationModal } from '@/components/RegistrationModal'
+import { MeetingModal } from '@/components/MeetingModal'
+import { AuthProvider } from '@/hooks/use-auth'
 
 const App = () => (
   <BrowserRouter>
-    <RegistrationProvider>
-      <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        <Routes>
-          <Route element={<Layout />}>
-            <Route path="/" element={<Index />} />
-            <Route path="/startup-challenge" element={<StartupChallenge />} />
-            <Route path="/investor-league" element={<InvestorLeague />} />
-          </Route>
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </TooltipProvider>
-    </RegistrationProvider>
+    <AuthProvider>
+      <RegistrationProvider>
+        <TooltipProvider>
+          <Toaster />
+          <Sonner />
+          <RegistrationModal />
+          <MeetingModal />
+          <Routes>
+            <Route element={<Layout />}>
+              <Route path="/" element={<Index />} />
+              <Route path="/startup-challenge" element={<StartupChallenge />} />
+              <Route path="/investor-league" element={<InvestorLeague />} />
+            </Route>
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </TooltipProvider>
+      </RegistrationProvider>
+    </AuthProvider>
   </BrowserRouter>
 )
 

@@ -29,7 +29,7 @@ import {
 } from 'lucide-react'
 
 export default function InvestorLeague() {
-  const { openModal } = useRegistrationStore()
+  const { openModal, openMeetingModal } = useRegistrationStore()
 
   const skills = [
     { name: 'Gestão de risco', icon: <ShieldAlert className="w-6 h-6" /> },
@@ -355,12 +355,7 @@ export default function InvestorLeague() {
             <Button
               size="lg"
               className="w-full sm:w-auto font-bold bg-investor text-white hover:bg-investor/90"
-              onClick={() =>
-                window.open(
-                  'https://wa.me/5511973408493?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20os%20desafios',
-                  '_blank',
-                )
-              }
+              onClick={openMeetingModal}
             >
               <Presentation className="mr-2 w-5 h-5" />
               AGENDAR REUNIÃO PARA MINHA ESCOLA

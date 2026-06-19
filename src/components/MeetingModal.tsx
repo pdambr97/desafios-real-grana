@@ -13,69 +13,49 @@ import { useToast } from '@/hooks/use-toast'
 import useRegistrationStore from '@/stores/useRegistrationStore'
 import { CheckCircle2 } from 'lucide-react'
 import { cn } from '@/lib/utils'
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from '@/components/ui/select'
 import { supabase } from '@/lib/supabase/client'
 
-export function RegistrationModal() {
-  const { isOpen, closeModal, challenge } = useRegistrationStore()
+export function MeetingModal() {
+  const { isMeetingModalOpen, closeMeetingModal } = useRegistrationStore()
   const [step, setStep] = useState(1)
   const [loading, setLoading] = useState(false)
   const { toast } = useToast()
 
   useEffect(() => {
-    if (!isOpen) {
+    if (!isMeetingModalOpen) {
       setTimeout(() => setStep(1), 300)
     }
-  }, [isOpen])
+  }, [isMeetingModalOpen])
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setLoading(true)
 
     const formData = new FormData(e.target as HTMLFormElement)
-    const challengeType = challenge || (formData.get('interestChallenge') as string) || 'Geral'
-
-    const leadId = crypto.randomUUID()
 
     const leadPayload = {
-      id: leadId,
-      full_name: formData.get('teacherName') as string,
+      full_name: formData.get('fullName') as string,
       email: formData.get('email') as string,
-      phone: formData.get('whatsapp') as string,
+      phone: formData.get('phone') as string,
       school_name: formData.get('schoolName') as string,
+      status: 'new',
     }
 
     try {
-      const { error: leadError } = await supabase.from('leads').insert([leadPayload])
+      const { error } = await supabase.from('leads').insert([leadPayload])
 
-      if (leadError) throw leadError
-
-      const registrationPayload = {
-        lead_id: leadId,
-        program_type: challengeType,
-        message: `Equipe: ${formData.get('teamName') as string}`,
-      }
-
-      const { error: regError } = await supabase.from('registrations').insert([registrationPayload])
-
-      if (regError) throw regError
+      if (error) throw error
 
       setStep(2)
       toast({
-        title: 'Inscrição recebida!',
-        description: 'Em breve entraremos em contato com você.',
+        title: 'Solicitação recebida!',
+        description: 'Em breve entraremos em contato para agendar nossa reunião.',
       })
     } catch (error) {
-      console.error('Error submitting registration:', error)
+      console.error('Error submitting lead:', error)
       toast({
-        title: 'Erro na Inscrição',
-        description: 'Ocorreu um erro ao enviar seus dados. Tente novamente.',
+        title: 'Erro',
+        description: 'Não foi possível enviar seus dados. Tente novamente mais tarde.',
         variant: 'destructive',
       })
     } finally {
@@ -84,22 +64,21 @@ export function RegistrationModal() {
   }
 
   return (
-    <Dialog open={isOpen} onOpenChange={(open) => !open && closeModal()}>
+    <Dialog open={isMeetingModalOpen} onOpenChange={(open) => !open && closeMeetingModal()}>
       <DialogContent className="sm:max-w-[500px] p-0 overflow-hidden bg-background">
         <div className="p-6">
           <DialogHeader className="mb-6">
             <DialogTitle className="font-display text-2xl">
-              {step === 1 ? 'Inscrição de Equipe' : 'Tudo Certo!'}
+              {step === 1 ? 'Agendar Reunião' : 'Tudo Certo!'}
             </DialogTitle>
             <DialogDescription>
               {step === 1
-                ? 'Preencha os dados abaixo para inscrever sua equipe.'
-                : 'Sua jornada está apenas começando.'}
+                ? 'Preencha os dados abaixo para que possamos agendar uma reunião.'
+                : 'Sua solicitação foi enviada com sucesso.'}
             </DialogDescription>
           </DialogHeader>
 
           <div className="grid">
-            {/* Step 1: Form */}
             <div
               className={cn(
                 'col-start-1 row-start-1 transition-all duration-300',
@@ -109,64 +88,32 @@ export function RegistrationModal() {
               )}
             >
               <form onSubmit={handleSubmit} className="space-y-4">
-                {challenge ? (
-                  <div className="bg-muted p-3 rounded-lg text-sm mb-2 text-center text-muted-foreground font-medium border border-border">
-                    Desafio selecionado: <strong className="text-foreground">{challenge}</strong>
-                  </div>
-                ) : (
-                  <div className="grid gap-2">
-                    <Label htmlFor="interestChallenge">Desafio de interesse</Label>
-                    <Select name="interestChallenge" required>
-                      <SelectTrigger id="interestChallenge">
-                        <SelectValue placeholder="Selecione o desafio de interesse" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="Investor League">Investor League</SelectItem>
-                        <SelectItem value="Startup Challenge">Startup Challenge</SelectItem>
-                        <SelectItem value="Investor League E Startup Challenge">
-                          Investor League E Startup Challenge
-                        </SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </div>
-                )}
-
                 <div className="grid gap-2">
-                  <Label htmlFor="teamName">Nome da Equipe</Label>
+                  <Label htmlFor="fullName">Nome Completo</Label>
                   <Input
-                    id="teamName"
-                    name="teamName"
-                    required
-                    placeholder="Digite o nome da equipe"
-                  />
-                </div>
-
-                <div className="grid gap-2">
-                  <Label htmlFor="teacherName">Nome do Professor/Coordenador Responsável</Label>
-                  <Input
-                    id="teacherName"
-                    name="teacherName"
+                    id="fullName"
+                    name="fullName"
                     required
                     placeholder="Digite seu nome completo"
                   />
                 </div>
 
                 <div className="grid gap-2">
-                  <Label htmlFor="email">E-mail do Professor/Coordenador Responsável</Label>
+                  <Label htmlFor="email">E-mail Corporativo/Profissional</Label>
                   <Input
                     id="email"
                     name="email"
                     type="email"
                     required
-                    placeholder="seu@email.com"
+                    placeholder="seu@escola.com.br"
                   />
                 </div>
 
                 <div className="grid gap-2">
-                  <Label htmlFor="whatsapp">WhatsApp do Professor/Coordenador Responsável</Label>
+                  <Label htmlFor="phone">Telefone / WhatsApp</Label>
                   <Input
-                    id="whatsapp"
-                    name="whatsapp"
+                    id="phone"
+                    name="phone"
                     type="tel"
                     required
                     placeholder="(00) 00000-0000"
@@ -174,7 +121,7 @@ export function RegistrationModal() {
                 </div>
 
                 <div className="grid gap-2">
-                  <Label htmlFor="schoolName">Nome da Escola</Label>
+                  <Label htmlFor="schoolName">Nome da Instituição</Label>
                   <Input
                     id="schoolName"
                     name="schoolName"
@@ -189,13 +136,12 @@ export function RegistrationModal() {
                     disabled={loading}
                     className="w-full bg-gold text-navy hover:bg-gold/90"
                   >
-                    {loading ? 'Aguarde...' : 'Realizar Inscrição'}
+                    {loading ? 'Enviando...' : 'Solicitar Agendamento'}
                   </Button>
                 </div>
               </form>
             </div>
 
-            {/* Step 2: Success */}
             <div
               className={cn(
                 'col-start-1 row-start-1 transition-all duration-300 flex flex-col items-center justify-center py-8 text-center',
@@ -207,12 +153,12 @@ export function RegistrationModal() {
               <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-4">
                 <CheckCircle2 className="w-8 h-8 text-green-600" />
               </div>
-              <h3 className="text-xl font-semibold mb-2">Inscrição Confirmada!</h3>
+              <h3 className="text-xl font-semibold mb-2">Solicitação Confirmada!</h3>
               <p className="text-muted-foreground mb-6">
-                Em breve entraremos em contato para verificação e inscrição dos alunos de cada
-                equipe
+                Em breve um de nossos especialistas entrará em contato para agendar o melhor
+                horário.
               </p>
-              <Button onClick={closeModal} className="w-full">
+              <Button onClick={closeMeetingModal} className="w-full">
                 Voltar ao portal
               </Button>
             </div>
