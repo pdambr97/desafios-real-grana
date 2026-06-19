@@ -48,20 +48,83 @@ export default function InvestorLeague() {
 
   const faqs = [
     {
-      q: 'O dinheiro é real?',
-      a: 'Não, usamos um simulador avançado com dinheiro fictício (cada equipe recebe R$ 100.000 virtuais). No entanto, todas as cotações, gráficos e ativos são reais, sincronizados com a B3.',
+      q: 'O que é a Investor League?',
+      a: 'É uma competição escolar focada em educação financeira e investimentos para jovens.',
     },
     {
-      q: 'Os alunos precisam de conhecimento prévio de economia?',
-      a: 'Não! O projeto é focado no aprendizado contínuo. Fornecemos materiais de apoio robustos, trilhas de conhecimento e suporte para as decisões ao longo da liga.',
+      q: 'Quem pode participar?',
+      a: 'A competição é destinada a alunos matriculados no Ensino Fundamental II ou Ensino Médio através de escolas participantes.',
     },
     {
-      q: 'É necessário já investir para participar?',
-      a: 'Não, a liga é formatada inclusive para iniciantes. Por se tratar de um ambiente simulado, os alunos aprendem na prática, sem riscos reais.',
+      q: 'Como é feita a inscrição?',
+      a: 'As inscrições devem ser realizadas exclusivamente pela escola participante.',
     },
     {
-      q: 'Os alunos utilizam dinheiro real?',
-      a: 'Não. Todo o capital utilizado (R$ 100.000 iniciais por equipe) é inteiramente virtual e restrito ao simulador do desafio.',
+      q: 'Qual o tamanho das equipes?',
+      a: 'As equipes devem ser formadas por 2 a 5 estudantes.',
+    },
+    {
+      q: 'A escola pode inscrever múltiplas equipes?',
+      a: 'Sim, as escolas podem inscrever múltiplas equipes.',
+    },
+    {
+      q: 'É usado dinheiro real na competição?',
+      a: 'Não, as operações são feitas apenas com dinheiro virtual dentro da nossa plataforma de simulação.',
+    },
+    {
+      q: 'Qual é o papel do Professor Responsável?',
+      a: 'O professor atua como orientador e ponto de contato. Não é necessária expertise prévia em investimentos.',
+    },
+    {
+      q: 'Qual a responsabilidade dos alunos?',
+      a: 'Os alunos são responsáveis pela gestão da carteira (portfólio), acompanhamento do mercado, entrega do relatório de gestão e participação na fase final caso sejam classificados.',
+    },
+    {
+      q: 'Como funciona a Fase 1?',
+      a: 'A Fase 1 é a Liga Regular, que dura 4 semanas. A avaliação baseia-se na rentabilidade da carteira e no relatório de gestão.',
+    },
+    {
+      q: 'Como é composta a nota da Fase 1?',
+      a: 'A nota é composta 50% pela rentabilidade alcançada no simulador e 50% pela qualidade do relatório de gestão.',
+    },
+    {
+      q: 'O que é o Relatório de Gestão?',
+      a: 'Um documento de até 3 páginas onde os alunos explicam a estratégia adotada, as decisões tomadas e como fizeram o gerenciamento de risco.',
+    },
+    {
+      q: 'Como funciona a Fase 2?',
+      a: 'A Fase 2 é o Investment Case, na qual as equipes finalistas recebem um cenário macroeconômico específico para análise e defesa perante a banca.',
+    },
+    {
+      q: 'Quais são os critérios do Investment Case?',
+      a: 'São avaliadas a qualidade da análise, estratégia adotada, diversificação da carteira, gestão de risco e a apresentação.',
+    },
+    {
+      q: 'É permitida a troca de integrantes?',
+      a: 'Não. A troca de integrantes não é permitida após a realização da inscrição.',
+    },
+    {
+      q: 'Como são gerenciados conflitos na equipe?',
+      a: 'Incentivamos a resolução interna; os conflitos devem ser gerenciados pelos próprios alunos e pela escola.',
+    },
+    {
+      q: 'Quem é a organização do evento?',
+      a: 'A competição é organizada pela Real Grana.',
+    },
+    {
+      q: 'Como entro em contato com a organização?',
+      a: (
+        <>
+          Para dúvidas e suporte, entre em contato pelo email{' '}
+          <a
+            href="mailto:investorleague@realgrana.com.br"
+            className="text-investor hover:underline font-medium"
+          >
+            investorleague@realgrana.com.br
+          </a>
+          .
+        </>
+      ),
     },
   ]
 
@@ -477,7 +540,9 @@ export default function InvestorLeague() {
       <section className="py-24 bg-background">
         <div className="container mx-auto px-4 max-w-3xl">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-display font-bold mb-4">Perguntas Frequentes</h2>
+            <h2 className="text-3xl font-display font-bold mb-4">
+              FAQ — Investor League Real Grana 2026
+            </h2>
             <p className="text-muted-foreground">Esclareça suas dúvidas sobre a Investor League.</p>
           </div>
           <Accordion type="single" collapsible className="w-full">

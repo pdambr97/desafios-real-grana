@@ -65,20 +65,75 @@ export default function StartupChallenge() {
 
   const faqs = [
     {
-      q: 'Qual a idade para participar?',
-      a: 'O desafio é destinado primariamente a alunos do Ensino Fundamental II e Ensino Médio.',
+      q: 'O que é o Startup Challenge?',
+      a: 'Uma competição que envolve empreendedorismo, inovação e uso de Inteligência Artificial para estudantes.',
     },
     {
-      q: 'A escola precisa pagar alguma taxa?',
-      a: 'Consulte nossa equipe comercial agendando uma apresentação para entender os pacotes institucionais e condições para escolas públicas.',
+      q: 'Quem pode participar?',
+      a: 'O desafio é destinado a alunos matriculados no Ensino Fundamental II ou Ensino Médio, através de escolas participantes.',
     },
     {
-      q: 'Precisa saber programar?',
-      a: 'Não! O foco é inteiramente no modelo de negócios, validação e estratégia. Usamos intensivamente ferramentas No-Code e IA para prototipagem.',
+      q: 'Como é feita a inscrição?',
+      a: 'A inscrição deve ser realizada exclusivamente pela escola participante.',
     },
     {
-      q: 'E se houver conflito entre integrantes da equipe?',
-      a: 'Incentivamos a resolução interna de conflitos como parte do aprendizado. Mudanças na composição da equipe são restritas e avaliadas caso a caso pela organização.',
+      q: 'Qual o tamanho das equipes?',
+      a: 'As equipes devem ser formadas por 2 a 5 estudantes.',
+    },
+    {
+      q: 'A escola pode inscrever múltiplas equipes?',
+      a: 'Sim, as escolas podem inscrever múltiplas equipes.',
+    },
+    {
+      q: 'Qual é o papel do Professor Responsável?',
+      a: 'O professor atua como mentor e ponto de contato da equipe. Não é necessária expertise técnica avançada em negócios.',
+    },
+    {
+      q: 'Qual a responsabilidade dos alunos?',
+      a: 'Os alunos são responsáveis pelo desenvolvimento do projeto, construção do MVP e elaboração do Pitch Deck.',
+    },
+    {
+      q: 'O que é o MVP?',
+      a: 'O MVP (Minimum Viable Product) deve ser um protótipo navegável da solução proposta pela equipe.',
+    },
+    {
+      q: 'As mentorias são obrigatórias?',
+      a: 'Sim, as mentorias são uma parte obrigatória da competição e contam pontos na avaliação.',
+    },
+    {
+      q: 'Como funciona o Pitch Final?',
+      a: 'O Pitch Final consiste em 5 minutos de apresentação seguidos por 5 minutos de perguntas e respostas (Q&A) com a banca avaliadora.',
+    },
+    {
+      q: 'Quais são os critérios de avaliação?',
+      a: 'A banca avalia: a relevância do problema, o tamanho do mercado, a qualidade da solução, o modelo de negócios, a evolução da equipe nas mentorias, o MVP com uso de IA e a apresentação do Pitch.',
+    },
+    {
+      q: 'É permitida a troca de integrantes?',
+      a: 'Não. A troca de integrantes não é permitida após a realização da inscrição.',
+    },
+    {
+      q: 'Como são gerenciados conflitos na equipe?',
+      a: 'Incentivamos a resolução interna; os conflitos devem ser gerenciados pelos próprios alunos e pela escola.',
+    },
+    {
+      q: 'Quem é a organização do evento?',
+      a: 'A competição é organizada pela Real Grana.',
+    },
+    {
+      q: 'Como entro em contato com a organização?',
+      a: (
+        <>
+          Para dúvidas e suporte, entre em contato pelo email{' '}
+          <a
+            href="mailto:startupchallenge@realgrana.com.br"
+            className="text-startup hover:underline font-medium"
+          >
+            startupchallenge@realgrana.com.br
+          </a>
+          .
+        </>
+      ),
     },
   ]
 
@@ -446,7 +501,9 @@ export default function StartupChallenge() {
       <section className="py-24 bg-background">
         <div className="container mx-auto px-4 max-w-3xl">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-display font-bold mb-4">Perguntas Frequentes</h2>
+            <h2 className="text-3xl font-display font-bold mb-4">
+              FAQ — Startup Challenge Real Grana 2026
+            </h2>
             <p className="text-muted-foreground">
               Tudo o que você precisa saber sobre o Startup Challenge.
             </p>
