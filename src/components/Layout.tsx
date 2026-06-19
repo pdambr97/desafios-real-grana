@@ -177,22 +177,42 @@ export default function Layout() {
               <h4 className="font-bold text-lg mb-6 text-gold">Institucional</h4>
               <ul className="space-y-3">
                 <li>
-                  <a href="#" className="text-gray-400 hover:text-white transition-colors">
+                  <a
+                    href="https://realgrana.com.br"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-400 hover:text-white transition-colors"
+                  >
                     Sobre a Real Grana
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="text-gray-400 hover:text-white transition-colors">
+                  <a
+                    href="https://realgrana.com.br"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-400 hover:text-white transition-colors"
+                  >
                     Para Escolas
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="text-gray-400 hover:text-white transition-colors">
+                  <a
+                    href="https://realgrana.com.br"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-400 hover:text-white transition-colors"
+                  >
                     Contato
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="text-gray-400 hover:text-white transition-colors">
+                  <a
+                    href="https://realgrana.com.br"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-400 hover:text-white transition-colors"
+                  >
                     Termos de Uso
                   </a>
                 </li>
