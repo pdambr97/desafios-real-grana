@@ -381,7 +381,7 @@ export default function Index() {
                   { name: 'OBInvest', query: 'bank' },
                   { name: 'BRHSIC', query: 'global' },
                   { name: 'Olimpíada Ágora', query: 'monument' },
-                  { name: 'Future Leaders', query: 'star' },
+                  { name: 'Preparatório OLITEF', query: 'star' },
                 ].map((partner, i) => (
                   <div
                     key={i}
