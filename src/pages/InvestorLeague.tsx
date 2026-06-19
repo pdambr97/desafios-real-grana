@@ -331,16 +331,27 @@ export default function InvestorLeague() {
             </Card>
           </div>
 
-          <div className="mt-16 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button
-              variant="outline"
-              size="lg"
-              className="w-full sm:w-auto font-bold border-investor text-investor hover:bg-investor hover:text-white"
-              onClick={() => window.open('#', '_blank')}
-            >
-              <Download className="mr-2 w-5 h-5" />
-              BAIXAR REGULAMENTO
-            </Button>
+          <div className="mt-16 flex flex-col items-center justify-center gap-4">
+            <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+              <Button
+                variant="outline"
+                size="lg"
+                className="w-full sm:w-auto font-bold border-investor text-investor hover:bg-investor hover:text-white"
+                onClick={() => window.open('#', '_blank')}
+              >
+                <Download className="mr-2 w-5 h-5" />
+                BAIXAR REGULAMENTO
+              </Button>
+              <Button
+                variant="outline"
+                size="lg"
+                className="w-full sm:w-auto font-bold border-investor text-investor hover:bg-investor hover:text-white"
+                onClick={() => window.open('#', '_blank')}
+              >
+                <Download className="mr-2 w-5 h-5" />
+                BAIXAR APRESENTAÇÃO
+              </Button>
+            </div>
             <Button
               size="lg"
               className="w-full sm:w-auto font-bold bg-investor text-white hover:bg-investor/90"
@@ -352,7 +363,7 @@ export default function InvestorLeague() {
               }
             >
               <Presentation className="mr-2 w-5 h-5" />
-              AGENDAR APRESENTAÇÃO PARA MINHA ESCOLA
+              AGENDAR REUNIÃO PARA MINHA ESCOLA
             </Button>
           </div>
         </div>
