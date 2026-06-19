@@ -5,6 +5,8 @@ import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 import useRegistrationStore from '@/stores/useRegistrationStore'
 import { RegistrationModal } from './RegistrationModal'
+import logoFull from '@/assets/logo-brancamargemreduzida-9e185.png'
+import logoSymbol from '@/assets/logo-simbolo-2-8e510.png'
 
 export default function Layout() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -40,17 +42,16 @@ export default function Layout() {
       >
         <div className="container mx-auto px-4 h-20 flex items-center justify-between">
           <Link to="/" className="flex items-center gap-2 group">
-            <div className="w-8 h-8 rounded bg-navy text-white flex items-center justify-center font-display font-bold text-xl group-hover:bg-gold transition-colors">
-              R
-            </div>
-            <span
-              className={cn(
-                'font-display font-bold text-xl tracking-tight transition-colors',
-                !isScrolled && location.pathname !== '/' ? 'text-primary' : 'text-primary',
-              )}
-            >
-              REAL GRANA
-            </span>
+            <img
+              src={logoFull}
+              alt="Real Grana"
+              className="h-8 md:h-10 w-auto object-contain hidden md:block"
+            />
+            <img
+              src={logoSymbol}
+              alt="Real Grana"
+              className="h-8 w-auto object-contain md:hidden"
+            />
           </Link>
 
           {/* Desktop Nav */}
@@ -126,12 +127,11 @@ export default function Layout() {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
             <div className="col-span-1 md:col-span-2">
               <Link to="/" className="flex items-center gap-2 mb-6">
-                <div className="w-8 h-8 rounded bg-gold text-navy flex items-center justify-center font-display font-bold text-xl">
-                  R
-                </div>
-                <span className="font-display font-bold text-xl tracking-tight text-white">
-                  REAL GRANA
-                </span>
+                <img
+                  src={logoFull}
+                  alt="Real Grana"
+                  className="h-10 md:h-12 w-auto object-contain"
+                />
               </Link>
               <p className="text-gray-400 max-w-sm mb-6">
                 Experiências nacionais que transformam teoria em prática e conectam estudantes ao
