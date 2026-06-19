@@ -16,7 +16,6 @@ import {
   CheckCircle2,
   Download,
   Presentation,
-  Play,
   ShieldAlert,
   BrainCircuit,
   Search,
@@ -337,19 +336,33 @@ export default function InvestorLeague() {
                 variant="outline"
                 size="lg"
                 className="w-full sm:w-auto font-bold border-investor text-investor hover:bg-investor hover:text-white"
-                onClick={() => window.open('/regulamento-investor-league-2026.pdf', '_blank')}
+                asChild
               >
-                <Download className="mr-2 w-5 h-5" />
-                BAIXAR REGULAMENTO
+                <a
+                  href="/regulamento-investor-league-2026.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  download
+                >
+                  <Download className="mr-2 w-5 h-5" />
+                  BAIXAR REGULAMENTO
+                </a>
               </Button>
               <Button
                 variant="outline"
                 size="lg"
                 className="w-full sm:w-auto font-bold border-investor text-investor hover:bg-investor hover:text-white"
-                onClick={() => window.open('#', '_blank')}
+                asChild
               >
-                <Download className="mr-2 w-5 h-5" />
-                BAIXAR APRESENTAÇÃO
+                <a
+                  href="/apresentacao-investor-league-2026.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  download
+                >
+                  <Download className="mr-2 w-5 h-5" />
+                  BAIXAR APRESENTAÇÃO
+                </a>
               </Button>
             </div>
             <Button
@@ -432,27 +445,6 @@ export default function InvestorLeague() {
                   </div>
                 </li>
               </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Video Block */}
-      <section className="py-24 bg-background">
-        <div className="container mx-auto px-4 max-w-5xl text-center">
-          <Badge className="bg-investor/10 text-investor mb-4">Visão Geral</Badge>
-          <h2 className="text-3xl md:text-4xl font-display font-bold mb-12">
-            Conheça a Investor League
-          </h2>
-
-          <div className="aspect-video bg-navy rounded-3xl relative overflow-hidden group cursor-pointer border border-border shadow-2xl flex items-center justify-center">
-            <img
-              src="https://img.usecurling.com/p/1280/720?q=stock%20market&color=green"
-              alt="Video thumbnail"
-              className="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:opacity-40 transition-opacity duration-500"
-            />
-            <div className="relative z-10 w-20 h-20 bg-investor rounded-full flex items-center justify-center text-white shadow-[0_0_30px_rgba(16,185,129,0.5)] group-hover:scale-110 transition-transform duration-300">
-              <Play className="w-8 h-8 ml-1" />
             </div>
           </div>
         </div>

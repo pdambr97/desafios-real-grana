@@ -9,7 +9,6 @@ import {
   AccordionTrigger,
 } from '@/components/ui/accordion'
 import {
-  Play,
   Lightbulb,
   Users,
   Bot,
@@ -314,19 +313,33 @@ export default function StartupChallenge() {
                 variant="outline"
                 size="lg"
                 className="w-full sm:w-auto font-bold border-startup text-startup hover:bg-startup hover:text-white"
-                onClick={() => window.open('/regulamento-startup-challenge-2026.pdf', '_blank')}
+                asChild
               >
-                <Download className="mr-2 w-5 h-5" />
-                BAIXAR REGULAMENTO
+                <a
+                  href="/regulamento-startup-challenge-2026.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  download
+                >
+                  <Download className="mr-2 w-5 h-5" />
+                  BAIXAR REGULAMENTO
+                </a>
               </Button>
               <Button
                 variant="outline"
                 size="lg"
                 className="w-full sm:w-auto font-bold border-startup text-startup hover:bg-startup hover:text-white"
-                onClick={() => window.open('#', '_blank')}
+                asChild
               >
-                <Download className="mr-2 w-5 h-5" />
-                BAIXAR APRESENTAÇÃO
+                <a
+                  href="/apresentacao-startup-challenge-2026.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  download
+                >
+                  <Download className="mr-2 w-5 h-5" />
+                  BAIXAR APRESENTAÇÃO
+                </a>
               </Button>
             </div>
             <Button
@@ -410,27 +423,6 @@ export default function StartupChallenge() {
                 <span className="font-display text-2xl font-bold text-startup">2 a 3 horas</span>
                 <span className="block text-muted-foreground text-sm mt-1">por semana</span>
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Video Block */}
-      <section className="py-24 bg-background">
-        <div className="container mx-auto px-4 max-w-5xl text-center">
-          <Badge className="bg-startup/10 text-startup mb-4">Visão Geral</Badge>
-          <h2 className="text-3xl md:text-4xl font-display font-bold mb-12">
-            Entenda o Startup Challenge em 2 minutos
-          </h2>
-
-          <div className="aspect-video bg-navy rounded-3xl relative overflow-hidden group cursor-pointer border border-border shadow-2xl flex items-center justify-center">
-            <img
-              src="https://img.usecurling.com/p/1280/720?q=students%20presentation&color=purple"
-              alt="Video thumbnail"
-              className="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:opacity-40 transition-opacity duration-500"
-            />
-            <div className="relative z-10 w-20 h-20 bg-startup rounded-full flex items-center justify-center text-white shadow-[0_0_30px_rgba(124,58,237,0.5)] group-hover:scale-110 transition-transform duration-300">
-              <Play className="w-8 h-8 ml-1" />
             </div>
           </div>
         </div>
