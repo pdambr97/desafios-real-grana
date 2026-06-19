@@ -8,6 +8,7 @@ import {
   AccordionTrigger,
 } from '@/components/ui/accordion'
 import useRegistrationStore from '@/stores/useRegistrationStore'
+import platformPreviewImage from '../assets/design-sem-nome-13-b112b.png'
 import {
   LineChart,
   BarChart3,
@@ -158,24 +159,12 @@ export default function InvestorLeague() {
           <div className="relative hidden md:block">
             {/* Abstract representation of charts */}
             <div className="absolute inset-0 bg-gradient-to-tr from-investor/20 to-transparent rounded-2xl border border-investor/30 backdrop-blur-sm p-6 transform rotate-3 scale-105"></div>
-            <div className="bg-card rounded-2xl border border-border p-6 shadow-2xl relative">
-              <div className="flex items-center justify-between mb-6">
-                <div>
-                  <p className="text-sm text-muted-foreground">Patrimônio Virtual da Equipe</p>
-                  <p className="text-3xl font-bold font-display">R$ 114.200,00</p>
-                </div>
-                <Badge className="bg-investor/20 text-investor border-none">+14.2%</Badge>
-              </div>
-              <div className="h-40 flex items-end gap-2">
-                {[40, 45, 30, 60, 55, 75, 65, 85, 90, 80, 100].map((h, i) => (
-                  <div key={i} className="w-full bg-investor/20 rounded-t-sm relative group">
-                    <div
-                      className="absolute bottom-0 w-full bg-investor rounded-t-sm transition-all duration-500"
-                      style={{ height: `${h}%` }}
-                    ></div>
-                  </div>
-                ))}
-              </div>
+            <div className="relative z-10 drop-shadow-2xl">
+              <img
+                src={platformPreviewImage}
+                alt="Plataforma Investor League"
+                className="w-full h-auto object-contain transform hover:scale-105 transition-transform duration-500"
+              />
             </div>
           </div>
         </div>
