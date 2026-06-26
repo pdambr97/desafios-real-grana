@@ -79,7 +79,7 @@ export default function Layout() {
                 >
                   {link.name}
                 </Link>
-              )
+              ),
             )}
           </nav>
 
@@ -128,7 +128,7 @@ export default function Layout() {
                 >
                   {link.name}
                 </Link>
-              )
+              ),
             )}
             <Button
               onClick={() => {
