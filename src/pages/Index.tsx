@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { Rocket, TrendingUp, ArrowRight, ShieldCheck, Trophy, Target, Calendar } from 'lucide-react'
+import { Rocket, TrendingUp, ArrowRight, ShieldCheck, Trophy, Target, Calendar, BookOpen } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { StatsCounter } from '@/components/StatsCounter'
@@ -29,6 +29,17 @@ export default function Index() {
       hover: 'hover:shadow-[0_0_30px_rgba(16,185,129,0.3)]',
       path: '/investor-league',
       tags: ['Mercado', 'Estratégia'],
+    },
+    {
+      id: 'olitef',
+      title: 'Preparatório OLITEF',
+      desc: 'Prepare-se para a Olimpíada do Tesouro Direto de Educação Financeira com conteúdo exclusivo e suporte especializado.',
+      icon: <BookOpen className="w-10 h-10 text-gold" />,
+      color: 'bg-gold',
+      hover: 'hover:shadow-[0_0_30px_rgba(212,175,55,0.3)]',
+      path: null,
+      externalUrl: 'https://prepolitef.realgrana.com.br/',
+      tags: ['Olimpíada', 'Preparação'],
     },
   ]
 
@@ -108,7 +119,7 @@ export default function Index() {
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto mb-16 animate-fade-in-up">
             <h2 className="text-3xl md:text-4xl font-display font-bold text-navy dark:text-white mb-4">
-              Duas jornadas, um objetivo: <br className="hidden md:block" /> Preparação real.
+              Três jornadas, um objetivo: <br className="hidden md:block" /> Preparação real.
             </h2>
             <p className="text-lg text-muted-foreground">
               Escolha a trilha que mais combina com o perfil da sua escola ou equipe e entre na
@@ -116,7 +127,7 @@ export default function Index() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 max-w-4xl mx-auto gap-8">
+          <div className="grid md:grid-cols-3 max-w-5xl mx-auto gap-8">
             {challenges.map((challenge, i) => (
               <div
                 key={challenge.id}
@@ -141,13 +152,25 @@ export default function Index() {
                   ))}
                 </div>
 
-                <Link
-                  to={challenge.path}
-                  className={cn('flex items-center font-semibold mt-auto', `text-${challenge.id}`)}
-                >
-                  Saiba Mais{' '}
-                  <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </Link>
+                {challenge.externalUrl ? (
+                  <a
+                    href={challenge.externalUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center font-semibold mt-auto text-gold"
+                  >
+                    Acessar{' '}
+                    <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </a>
+                ) : (
+                  <Link
+                    to={challenge.path}
+                    className={cn('flex items-center font-semibold mt-auto', `text-${challenge.id}`)}
+                  >
+                    Saiba Mais{' '}
+                    <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                )}
               </div>
             ))}
           </div>

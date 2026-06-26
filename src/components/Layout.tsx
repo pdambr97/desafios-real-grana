@@ -28,6 +28,7 @@ export default function Layout() {
     { name: 'Início', path: '/' },
     { name: 'Startup Challenge', path: '/startup-challenge' },
     { name: 'Investor League', path: '/investor-league' },
+    { name: 'Preparatório OLITEF', path: null, external: 'https://prepolitef.realgrana.com.br/' },
   ]
 
   return (
@@ -56,18 +57,30 @@ export default function Layout() {
 
           {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <Link
-                key={link.path}
-                to={link.path}
-                className={cn(
-                  'text-sm font-medium transition-colors hover:text-gold',
-                  location.pathname === link.path ? 'text-gold' : 'text-muted-foreground',
-                )}
-              >
-                {link.name}
-              </Link>
-            ))}
+            {navLinks.map((link) =>
+              link.external ? (
+                <a
+                  key={link.name}
+                  href={link.external}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm font-medium transition-colors hover:text-gold text-muted-foreground"
+                >
+                  {link.name}
+                </a>
+              ) : (
+                <Link
+                  key={link.path}
+                  to={link.path}
+                  className={cn(
+                    'text-sm font-medium transition-colors hover:text-gold',
+                    location.pathname === link.path ? 'text-gold' : 'text-muted-foreground',
+                  )}
+                >
+                  {link.name}
+                </Link>
+              )
+            )}
           </nav>
 
           <div className="hidden md:flex">
@@ -96,15 +109,27 @@ export default function Layout() {
           )}
         >
           <div className="container mx-auto px-4 flex flex-col gap-4">
-            {navLinks.map((link) => (
-              <Link
-                key={link.path}
-                to={link.path}
-                className="text-lg font-medium p-2 rounded-md hover:bg-accent text-foreground"
-              >
-                {link.name}
-              </Link>
-            ))}
+            {navLinks.map((link) =>
+              link.external ? (
+                <a
+                  key={link.name}
+                  href={link.external}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-lg font-medium p-2 rounded-md hover:bg-accent text-foreground"
+                >
+                  {link.name}
+                </a>
+              ) : (
+                <Link
+                  key={link.path}
+                  to={link.path}
+                  className="text-lg font-medium p-2 rounded-md hover:bg-accent text-foreground"
+                >
+                  {link.name}
+                </Link>
+              )
+            )}
             <Button
               onClick={() => {
                 setIsMobileMenuOpen(false)
@@ -169,6 +194,16 @@ export default function Layout() {
                   >
                     Investor League
                   </Link>
+                </li>
+                <li>
+                  <a
+                    href="https://prepolitef.realgrana.com.br/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-400 hover:text-white transition-colors"
+                  >
+                    Preparatório OLITEF
+                  </a>
                 </li>
               </ul>
             </div>
