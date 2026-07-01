@@ -47,7 +47,7 @@ export default function Index() {
       color: 'bg-gold',
       hover: 'hover:shadow-[0_0_30px_rgba(212,175,55,0.3)]',
       path: null,
-      externalUrl: 'https://prepolitef.realgrana.com.br/',
+      externalUrl: 'https://prep.realgrana.com.br',
       tags: ['Olimpíada', 'Preparação'],
     },
   ]

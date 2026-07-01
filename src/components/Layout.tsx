@@ -31,7 +31,7 @@ export default function Layout() {
     {
       name: 'Preparatório Olimpíada',
       path: null,
-      external: 'https://prepolitef.realgrana.com.br/',
+      external: 'https://prep.realgrana.com.br',
     },
   ]
 
@@ -201,7 +201,7 @@ export default function Layout() {
                 </li>
                 <li>
                   <a
-                    href="https://prepolitef.realgrana.com.br/"
+                    href="https://prep.realgrana.com.br"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-gray-400 hover:text-white transition-colors"
