@@ -1,14 +1,5 @@
 import { Link } from 'react-router-dom'
-import {
-  Rocket,
-  TrendingUp,
-  ArrowRight,
-  ShieldCheck,
-  Trophy,
-  Target,
-  Calendar,
-  BookOpen,
-} from 'lucide-react'
+import { Rocket, TrendingUp, ArrowRight, ShieldCheck, Trophy, Target, Calendar, BookOpen } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { StatsCounter } from '@/components/StatsCounter'
@@ -41,8 +32,8 @@ export default function Index() {
     },
     {
       id: 'olitef',
-      title: 'Preparatório OLITEF',
-      desc: 'Prepare-se para a Olimpíada do Tesouro Direto de Educação Financeira com conteúdo exclusivo e suporte especializado.',
+      title: 'Preparatório Olimpíada',
+      desc: 'Prepare-se para a Olimpíada de Educação Financeira com conteúdo exclusivo e suporte especializado.',
       icon: <BookOpen className="w-10 h-10 text-gold" />,
       color: 'bg-gold',
       hover: 'hover:shadow-[0_0_30px_rgba(212,175,55,0.3)]',
@@ -174,10 +165,7 @@ export default function Index() {
                 ) : (
                   <Link
                     to={challenge.path}
-                    className={cn(
-                      'flex items-center font-semibold mt-auto',
-                      `text-${challenge.id}`,
-                    )}
+                    className={cn('flex items-center font-semibold mt-auto', `text-${challenge.id}`)}
                   >
                     Saiba Mais{' '}
                     <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -344,7 +332,7 @@ export default function Index() {
                   { name: 'OBInvest', query: 'bank' },
                   { name: 'BRHSIC', query: 'global' },
                   { name: 'Olimpíada Ágora & ESEG', query: 'monument' },
-                  { name: 'Preparatório OLITEF', query: 'star' },
+                  { name: 'Preparatório Olimpíada', query: 'star' },
                 ].map((partner, i) => (
                   <div
                     key={i}
