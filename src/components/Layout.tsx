@@ -28,7 +28,11 @@ export default function Layout() {
     { name: 'Início', path: '/' },
     { name: 'Startup Challenge', path: '/startup-challenge' },
     { name: 'Investor League', path: '/investor-league' },
-    { name: 'Preparatório Olimpíada', path: null, external: 'https://prepolitef.realgrana.com.br/' },
+    {
+      name: 'Preparatório Olimpíada',
+      path: null,
+      external: 'https://prepolitef.realgrana.com.br/',
+    },
   ]
 
   return (
@@ -79,7 +83,7 @@ export default function Layout() {
                 >
                   {link.name}
                 </Link>
-              )
+              ),
             )}
           </nav>
 
@@ -128,7 +132,7 @@ export default function Layout() {
                 >
                   {link.name}
                 </Link>
-              )
+              ),
             )}
             <Button
               onClick={() => {

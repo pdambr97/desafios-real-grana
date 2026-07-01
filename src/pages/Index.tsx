@@ -1,5 +1,14 @@
 import { Link } from 'react-router-dom'
-import { Rocket, TrendingUp, ArrowRight, ShieldCheck, Trophy, Target, Calendar, BookOpen } from 'lucide-react'
+import {
+  Rocket,
+  TrendingUp,
+  ArrowRight,
+  ShieldCheck,
+  Trophy,
+  Target,
+  Calendar,
+  BookOpen,
+} from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { StatsCounter } from '@/components/StatsCounter'
@@ -165,7 +174,10 @@ export default function Index() {
                 ) : (
                   <Link
                     to={challenge.path}
-                    className={cn('flex items-center font-semibold mt-auto', `text-${challenge.id}`)}
+                    className={cn(
+                      'flex items-center font-semibold mt-auto',
+                      `text-${challenge.id}`,
+                    )}
                   >
                     Saiba Mais{' '}
                     <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
